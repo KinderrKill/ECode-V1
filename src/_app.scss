@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@200;300;400;500;900&display=swap');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --font-Nunito: 'Nunito', monospace, sans-serif;
+  --font-Poppins: 'Poppins', monospace, sans-serif;
+  --font-Alegreya: 'Alegreya', monospace, sans-serif;
+}
+
+* {
+  overflow: hidden;
+}
+
+.cursor-blob {
+  height: 32vmax;
+  aspect-ratio: 1;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+
+  border-radius: 100%;
+
+  background: linear-gradient(to right, red, orange, cyan);
+  animation: blob-animation 10s linear infinite;
+
+  z-index: -2;
+
+  &__blur {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    backdrop-filter: blur(10vmax);
+
+    z-index: -1;
+  }
+}
+
+@keyframes blob-animation {
+  0% {
+    transform: rotate(0deg) skew(0deg, 0deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(180deg) skew(30deg, -10deg) scale(1.2, 0.8);
+  }
+  100% {
+    transform: rotate(360deg) skew(0deg, 0deg) scale(1, 1);
+  }
+}
+
+// Default value
+h1 {
+  font-family: var(--font-Poppins);
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+// Hover animation
+.hover-underline {
+  position: relative;
+  width: auto;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 10px;
+    background-color: white;
+    transition: width 0.2s ease-in-out;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
