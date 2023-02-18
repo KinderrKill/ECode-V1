@@ -1,9 +1,9 @@
-import { ReactNode, useEffect, useRef } from 'react';
-import BlobCursor from '../../components/BlobCursor';
+import { ReactNode, useEffect, useRef } from 'react'
+import BlobCursor from '../../components/blobCursor'
 
 type LayoutProps = {
-  components: ReactNode;
-};
+  components: ReactNode
+}
 
 export default function Layout({ components }: LayoutProps) {
   return (
@@ -11,5 +11,5 @@ export default function Layout({ components }: LayoutProps) {
       <BlobCursor />
       <div>{components}</div>
     </>
-  );
+  )
 }

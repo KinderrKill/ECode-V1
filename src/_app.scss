@@ -78,12 +78,26 @@ a {
 }
 
 // Default value
-h1 {
+h1,
+h2,
+h3 {
   font-family: var(--font-Poppins);
   font-size: clamp(3rem, 10vw, 10rem);
   color: white;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 5vw, 3rem);
+}
+
+button {
+  @apply bg-white hover:bg-gray-800 hover:text-white transition-all text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow;
 }
 
 // Hover animation

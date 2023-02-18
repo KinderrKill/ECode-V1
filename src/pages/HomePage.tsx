@@ -1,5 +1,5 @@
-import GlitchedTitle from '../components/GlitchedTitle';
-import { TypingCodeBloc } from '../components/TypingCodeBlock';
+import GlitchedTitle from '../components/glitchedTitle'
+import { TypingCodeBloc } from '../components/typingCodeBlock'
 
 export default function HomePage() {
   return (
@@ -7,5 +7,5 @@ export default function HomePage() {
       <GlitchedTitle value={'e-code'} />
       <TypingCodeBloc />
     </div>
-  );
+  )
 }

@@ -1,40 +1,40 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-const LETTERS = 'abcdefghijklmnopqrstuvwxyz';
+const LETTERS = 'abcdefghijklmnopqrstuvwxyz'
 
 type propsType = {
-  value: string;
-};
+  value: string
+}
 
 export default function GlitchedTitle(props: propsType) {
   useEffect(() => {
-    const text = document.querySelector<HTMLTitleElement>('h1');
-    if (!text) return;
+    const text = document.querySelector<HTMLTitleElement>('h1')
+    if (!text) return
 
     text.onmouseover = (event) => {
-      if (!event.target) return;
+      if (!event.target) return
 
-      const target = event.target as HTMLTitleElement;
+      const target = event.target as HTMLTitleElement
 
-      let iterations = 0;
+      let iterations = 0
       const interval = setInterval(() => {
         target.innerText = target.innerText
           .split('')
           .map((letter, index) => {
-            if (index < iterations) return props.value[index];
-            else return LETTERS[Math.floor(Math.random() * LETTERS.length)];
+            if (index < iterations) return props.value[index]
+            else return LETTERS[Math.floor(Math.random() * LETTERS.length)]
           })
-          .join('');
+          .join('')
 
         if (iterations++ >= props.value.length) {
-          clearInterval(interval);
+          clearInterval(interval)
         }
-      }, 50);
-    };
-  }, []);
+      }, 50)
+    }
+  }, [])
   return (
     <h1 className='font-painted uppercase select-none text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline'>
       {props.value}
     </h1>
-  );
+  )
 }

@@ -1,14 +1,40 @@
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import HomePage from './pages/HomePage';
-import Layout from './pages/layout/Layout';
+import HomePage from './pages/homePage'
+import Layout from './pages/layout/Layout'
 
-import './_app.scss';
+import './_app.scss'
+import { Dashboard } from './pages/adminDashboard'
+import AuthContext from './contexts/authContext'
+import { AdminLogin } from './pages/adminLogin'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout components={<HomePage />} />,
+    errorElement: (
+      <div>
+        <h1>PAGE 404</h1>
+      </div>
+    ),
+  },
+  {
+    path: '/dashboard',
+    element: <Layout components={<Dashboard />} />,
+  },
+  {
+    path: '/login/admin',
+    element: <Layout components={<AdminLogin />} />,
+  },
+])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <AuthContext>
+    <RouterProvider router={router} />
+  </AuthContext>
   // <React.StrictMode>
-  //   <Layout components={<HomePage />} />
+  //   <RouterProvider router={router} />
   // </React.StrictMode>
-
-  <Layout components={<HomePage />} />
-);
+)
