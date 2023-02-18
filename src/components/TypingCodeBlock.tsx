@@ -37,7 +37,7 @@ export function TypingCodeBloc() {
   }, [typingWriterRef]);
 
   return (
-    <section className='cmd_interface'>
+    <section className='cmd_interface font-primary'>
       <article className='cmd_interface__header select-none'>
         <div className='ml-5 w-1/2 h-full flex items-end'>
           <span className='cmd_interface__header--tab pb-2'>
@@ -50,8 +50,11 @@ export function TypingCodeBloc() {
           <span className='h-full px-3 text-2xl'>x</span>
         </div>
       </article>
-      <article className='mt-2 ml-2 flex flex-col'>
-        <span>Site internet E-code [version 0.1]</span>
+      <article className='mt-2 ml-2 flex flex-col '>
+        <span>
+          Site internet E-code
+          <a href='https://github.com/KinderrKill/ECode-Front/blob/main/CHANGELOG.md'> [Version 0.1]</a>
+        </span>
         <span>
           &copy; {new Date().getFullYear()} <a href='https://github.com/kinderrkill'>Etienne S</a>. Tout droits réservés
         </span>

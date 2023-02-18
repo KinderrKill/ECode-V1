@@ -5,7 +5,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@200;300;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -23,11 +23,19 @@
 
   --font-Nunito: 'Nunito', monospace, sans-serif;
   --font-Poppins: 'Poppins', monospace, sans-serif;
-  --font-Alegreya: 'Alegreya', monospace, sans-serif;
+  --font-Alegreya: 'Finger Paint', monospace, sans-serif;
 }
 
 * {
   overflow: hidden;
+}
+
+a {
+  color: rgba(0, 255, 213, 0.897);
+
+  &:hover {
+    color: rgba(2, 220, 184, 0.897);
+  }
 }
 
 .cursor-blob {

@@ -33,7 +33,7 @@ export default function GlitchedTitle(props: propsType) {
     };
   }, []);
   return (
-    <h1 className='uppercase select-none text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline'>
+    <h1 className='font-painted uppercase select-none text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline'>
       {props.value}
     </h1>
   );
