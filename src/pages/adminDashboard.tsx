@@ -42,37 +42,3 @@ export function Dashboard() {
     </>
   )
 }
-
-// useEffect(() => {
-//   if (!authContext.connected) {
-//     navigate('/login/admin')
-//   }
-// }, [])
-
-// const [testData, setTestData] = useState<TestCollection>()
-
-// useEffect(() => {
-//   if (authContext.connected) fetch()
-// }, [])
-
-// async function fetch() {
-//   const result = await pocketBase.collection('test').getFullList<TestCollection>()
-//   setTestData(result[0])
-// }
-
-// async function update() {
-//   if (!testData) return
-
-//   const modifiedData = testData
-//   modifiedData.text = `Modified by Ecode, last modification ${modifiedData.updated}`
-
-//   await pocketBase
-//     .collection('test')
-//     .update(testData?.id, modifiedData)
-//     .then(() => {
-//       fetch()
-//     })
-//     .catch((err) => {
-//       console.error('ERROR ', err)
-//     })
-// }

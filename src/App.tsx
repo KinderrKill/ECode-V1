@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import HomePage from './pages/homePage'
+import HomePage from './pages/home'
 import Layout from './pages/layout/Layout'
 
 import './_app.scss'
