@@ -8,7 +8,7 @@ type LayoutProps = {
 export default function Layout({ components }: LayoutProps) {
   return (
     <>
-      <BlobCursor />
+      {/* <BlobCursor /> */}
       <div>{components}</div>
     </>
   )

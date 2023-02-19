@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useLogin from '../hooks/useLogin'
 import pocketBase from '../lib/pocketBase'
-import { AuthContextType } from '../utils/types/typings'
+import { AuthContextType } from '../utils/typings'
 
 export const AuthContextSchema = createContext<AuthContextType>({
   connected: false,

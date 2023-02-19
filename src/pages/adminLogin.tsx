@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AuthData } from '../utils/types/typings'
+import { AuthData } from '../utils/typings'
 import useLogin from '../hooks/useLogin'
 import { useNavigate } from 'react-router-dom'
 import useAuthContext from '../hooks/useAuthContext'
@@ -13,7 +13,7 @@ export function AdminLogin() {
     if (authContext.connected) navigate('/dashboard')
   }, [])
 
-  const [login, loginState] = useLogin()
+  const { login, loginState } = useLogin()
 
   const [data, setData] = useState<AuthData>({
     email: null,

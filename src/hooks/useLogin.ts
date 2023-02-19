@@ -1,11 +1,11 @@
 import pocketBase from '../lib/pocketBase'
 import { useState } from 'react'
 
-import { AuthData, LoginState } from '../utils/types/typings'
+import { AuthData, DefaultState } from '../utils/typings'
 import { useNavigate } from 'react-router-dom'
 import useAuthContext from './useAuthContext'
 
-function getModifiedState(loading: boolean, error?: string): LoginState {
+function getModifiedState(loading: boolean, error?: string): DefaultState {
   return {
     loading,
     error,
@@ -16,7 +16,7 @@ export default function useLogin() {
   const navigate = useNavigate()
   const authContext = useAuthContext()
 
-  const [loginState, setLoginState] = useState<LoginState>({
+  const [loginState, setLoginState] = useState<DefaultState>({
     loading: false,
     error: undefined,
   })
@@ -35,7 +35,7 @@ export default function useLogin() {
     try {
       await pocketBase.admins.authWithPassword(data.email, data.password)
 
-      authContext.loggedIn()
+      authContext.login()
 
       setTimeout(() => {
         navigate('/dashboard')
@@ -46,5 +46,5 @@ export default function useLogin() {
     }
   }
 
-  return [login, loginState] as const
+  return { login, loginState }
 }
