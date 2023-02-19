@@ -1,23 +1,20 @@
-import useAuthContext from '../hooks/useAuthContext'
 import { useNavigate } from 'react-router-dom'
-import useFetchPocketBase from '../hooks/useFetch'
-import { COLLECTIONS, FETCH_METHOD } from '../utils/constants'
-import { PocketBaseRecord } from '../lib/pocketBase'
+import useAuthContext from '../hooks/useAuthContext'
+import useFetch from '../hooks/useFetch'
 
-interface TestRecord extends PocketBaseRecord {
-  value: string
-}
+import { COLLECTIONS, FETCH_METHOD } from '../utils/constants'
+import { TestRecord } from '../utils/typings/fetchingTypes'
 
 export function Dashboard() {
   const navigate = useNavigate()
   const authContext = useAuthContext()
 
-  const { data, state } = useFetchPocketBase<TestRecord>({
+  const { data, state } = useFetch<TestRecord>({
     collectionName: COLLECTIONS.TEST,
     method: FETCH_METHOD.GET_FULL_LIST,
   })
 
-  console.log('Dashboard useFetch : ', data?.valueZOZOLEZAZOU)
+  console.log('Dashboard useFetch : ', data?.value)
   console.log(state)
 
   function handleLogout() {

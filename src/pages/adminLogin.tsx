@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AuthData } from '../utils/typings'
+import { AuthData } from '../utils/typings/globalTypes'
 import useLogin from '../hooks/useLogin'
 import { useNavigate } from 'react-router-dom'
 import useAuthContext from '../hooks/useAuthContext'

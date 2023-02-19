@@ -1,7 +1,7 @@
 import pocketBase from '../lib/pocketBase'
 import { useState } from 'react'
 
-import { AuthData, DefaultState } from '../utils/typings'
+import { AuthData, DefaultState } from '../utils/typings/globalTypes'
 import { useNavigate } from 'react-router-dom'
 import useAuthContext from './useAuthContext'
 

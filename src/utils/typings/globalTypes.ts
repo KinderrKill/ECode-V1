@@ -1,3 +1,8 @@
+export interface DefaultState {
+  loading: boolean
+  error: string | undefined
+}
+
 export interface AuthData {
   email: string | null
   password: string | null
@@ -8,11 +13,6 @@ export interface AuthContextType {
   token: string | null
   login: () => void
   logout: () => void
-}
-
-export interface DefaultState {
-  loading: boolean
-  error: string | undefined
 }
 
 // PocketBase

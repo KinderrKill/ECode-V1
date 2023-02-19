@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
 import pocketBase from '../lib/pocketBase'
+import { useEffect, useState } from 'react'
 
-import { BaseDataOptions, CollectionDataResult, DefaultState } from './../utils/typings'
+import { BaseDataOptions, CollectionDataResult, DefaultState } from '../utils/typings/globalTypes'
 
-export default function useFetchPocketBase<T>({
+export default function useFetch<T>({
   collectionName,
   method,
   params = [],
@@ -15,10 +15,18 @@ export default function useFetchPocketBase<T>({
   })
 
   useEffect(() => {
-    console.log('[useFetchPocketBase] UseEffect called ')
     async function fetchData() {
       try {
         const collection: any = pocketBase.collection(collectionName)
+
+        if (!(method in collection)) {
+          console.error(`Method ${method} is not available in ${collectionName} collection !`)
+          setState((prevState) => ({
+            ...prevState,
+            loading: false,
+          }))
+        }
+
         const result = await collection[method](...params)
 
         setData(result)
