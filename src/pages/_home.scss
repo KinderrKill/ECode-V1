@@ -1,0 +1,131 @@
+@import '../app';
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color-primary;
+
+  background-image: url('../assets/images/header_background.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.content-panel {
+  width: 40%;
+  height: 40%;
+
+  position: absolute;
+  top: 40%;
+  left: 10%;
+
+  transform: translateY(-50%);
+
+  .console-command {
+    width: 100%;
+    height: 100%;
+    background-color: #060a1b;
+
+    border-radius: 20px;
+
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+
+    .brand {
+      width: 100%;
+      height: 40px;
+      background-color: #d6ced8;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+
+      position: relative;
+
+      &__dot {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+
+        span {
+          width: 20px;
+          height: 20px;
+
+          border-radius: 100%;
+        }
+
+        .dot-red {
+          background-color: #d05f69;
+        }
+
+        .dot-orange {
+          position: absolute;
+          left: 40px;
+          background-color: #f4aa3c;
+        }
+
+        .dot-green {
+          position: absolute;
+          left: 70px;
+          background-color: #3aafb7;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 101%;
+      height: 101%;
+
+      border-radius: inherit;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      background: conic-gradient(from 0deg at 50% 50%, blue, rgb(83, 0, 128), rgb(62, 0, 128), blue);
+      transform: translateZ(-50px);
+    }
+
+    &:after {
+      content: '';
+      width: 101%;
+      height: 101%;
+
+      border-radius: inherit;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      inset: -0.1rem;
+
+      background: rgb(5, 5, 5);
+      transform: translateZ(-10px);
+      filter: blur(10px);
+    }
+
+    .content {
+      margin: 1rem 1rem;
+      //text-shadow: 0 0 0.3em currentColor;
+    }
+  }
+}
+
+.rocket-panel {
+  width: 100%;
+  height: auto;
+
+  .smoke,
+  .rocket {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+  }
+}

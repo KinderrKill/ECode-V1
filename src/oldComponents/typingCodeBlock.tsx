@@ -42,14 +42,14 @@ export function TypingCodeBloc() {
   }, [typingWriterRef])
 
   return (
-    <section className='cmd_interface font-primary'>
+    <section className='cmd_interface font-primary container w-full'>
       <article className='cmd_interface__header select-none'>
         <div className='ml-5 w-1/2 h-full flex items-end'>
           <span className='cmd_interface__header--tab pb-2'>
             <img
               src={CMDIcon}
               alt='Icône de console de commande'
-              className='w-4 mr-3 hover:cursor-pointer'
+              className='w-4 mr-3 hover:cursor-pointer truncate'
               onClick={() => navigate('/dashboard')}
             />
             @E-Code - Invite de commande

@@ -1,13 +1,30 @@
-import GlitchedTitle from '../components/glitchedTitle'
-import { TypingCodeBloc } from '../components/typingCodeBlock'
+import './_home.scss'
+
+import rocket from '../assets/images/header_rocket.webp'
+import rocketSmoke from '../assets/images/header_rocket_smoke.webp'
+import rocketWave from '../assets/images/header_wave.svg'
+
+import { ConsoleCommand } from '../components/consoleCommand'
+import ProjectSection from '../components/projectSection'
+import PresentationSection from '../components/presentationSection'
+import Portfolio from '../components/portfolio'
 
 export default function HomePage() {
   return (
     <>
-      <div className='z-0 w-screen h-screen flex flex-col justify-center items-center gap-32'>
-        <GlitchedTitle value={'e-code'} />
-        <TypingCodeBloc />
-      </div>
+      <section className='section'>
+        <article className='content-panel'>
+          <ConsoleCommand />
+        </article>
+        <article className='rocket-panel'>
+          <img className='smoke' src={rocketSmoke} alt='' />
+          <img className='rocket' src={rocket} alt='' />
+          <img className='wave' src={rocketWave} alt='' />
+        </article>
+      </section>
+      <ProjectSection />
+      <PresentationSection />
+      <Portfolio />
     </>
   )
 }

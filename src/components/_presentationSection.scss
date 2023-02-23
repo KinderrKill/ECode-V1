@@ -1,0 +1,86 @@
+@import '../app.scss';
+
+.presentation-section {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $bg-color-third;
+
+  &__title {
+    position: relative;
+    padding-bottom: 3rem;
+    &::after {
+      content: '';
+      width: 20%;
+      height: 3px;
+      background-color: $color-secondary;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__display {
+    position: relative;
+    margin-top: 4rem;
+  }
+
+  &__card {
+    width: 300px;
+    height: 380px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+    filter: grayscale(1) brightness(0.75);
+
+    background: url('../assets/images/etienne_s_presentation_pic.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+    transition: all 400ms ease;
+
+    &:hover {
+      background-size: 400px;
+      background-position: left center;
+
+      filter: grayscale(0) brightness(1);
+    }
+
+    &--title {
+      width: 90%;
+      height: 90%;
+
+      display: flex;
+      align-items: center;
+
+      border-radius: inherit;
+      border: 3px solid rgba(255, 255, 255, 1);
+
+      transition: opacity 400ms ease-in;
+      opacity: 0;
+
+      filter: brightness(1);
+      span {
+        padding-left: 1rem;
+        text-align: left;
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 1);
+        text-shadow: black 0px 1px 8px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .cmd_interface {
   width: 50%;
-  height: 30%;
+  height: 20rem;
 
   background-color: #0c0c0c;
 
@@ -30,15 +30,13 @@
   }
 }
 
-#typing-writer p {
-  &::after {
-    content: '';
-    width: 1px;
-    height: 10px;
-    border-right: 2px solid white;
+#typing-writer p::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid white;
 
-    animation: blink 1s infinite ease;
-  }
+  animation: blink 1s infinite ease;
 }
 
 @keyframes blink {

@@ -1,9 +1,15 @@
+### Version 0.3
+
+- Refonte globale du design
+- Implémentation de la section : Mes services
+- Implémentation de la section : Qui suis-je
+- Implémentation de la section : Portfolio
+
 ### Version 0.2
 
-- Implement PocketBase (Include first test in adminDashboard.tsx)
-- Add Dashboard and login page for administrators
-- Add authentification context for keeping the connexion on the website
+- Implémentation de PocketBase avec un hook custom pour la récupération des données
+- Ajout d'un contexte d'authentification et une connexion pour les administrateurs
 
 ### Version 0.1
 
-- First public release of the website
+- Première version publique annonçant la création du site
