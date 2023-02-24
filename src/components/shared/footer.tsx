@@ -44,11 +44,11 @@ export default function Footer() {
     },
   ]
   return (
-    <div className='bg-third py-5 flex flex-col items-center justify-center'>
-      <div className='flex gap-10 my-8'>
+    <div className='bg-third pb-3 flex flex-col items-center justify-center'>
+      <div className='flex gap-10 my-5'>
         {socialNetwork.map((item: SocialNetwork, index: number) => (
           <a href={item.link} className='hover:scale-105 transition-all'>
-            <img src={item.icon} alt={item.alt} className='w-10 h-10 rounded-lg' />
+            <img src={item.icon} alt={item.alt} className='w-8 h-8 rounded-lg' />
           </a>
         ))}
       </div>

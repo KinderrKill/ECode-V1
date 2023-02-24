@@ -1,9 +1,11 @@
+import BlobCursor from './shared/blobCursor'
 import './_presentationSection.scss'
 
 export default function PresentationSection() {
   return (
     <>
       <div className='presentation-section'>
+        <BlobCursor />
         <section className='presentation-section__title flex flex-col justify-start items-center gap-10 pt-10 '>
           <h2>À propos de moi</h2>
           <p className='text-center'>

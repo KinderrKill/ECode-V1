@@ -21,7 +21,7 @@ enum portfolioCategory {
   JAVA = 'Java',
 }
 
-export default function Portfolio() {
+export default function PortfolioSection() {
   const [category, setCategory] = useState<portfolioCategory | null>(null)
 
   const projectItems = [

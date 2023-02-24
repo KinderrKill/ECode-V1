@@ -3,12 +3,13 @@ import './_home.scss'
 import rocket from '../assets/images/header_rocket.webp'
 import rocketSmoke from '../assets/images/header_rocket_smoke.webp'
 import rocketWave from '../assets/images/header_wave.svg'
+import mouseScroll from '../assets/icons/mouse_scroll.svg'
 
 import { ConsoleCommand } from '../components/consoleCommand'
-import ProjectSection from '../components/projectSection'
+import ServiceSection from '../components/serviceSection'
 import PresentationSection from '../components/presentationSection'
-import Portfolio from '../components/portfolio'
-import ContactSection from '../components/contactSecion'
+import PortfolioSection from '../components/portfolioSection'
+import ContactSection from '../components/contactSection'
 
 export default function HomePage() {
   return (
@@ -22,10 +23,12 @@ export default function HomePage() {
           <img className='rocket' src={rocket} alt='' />
           <img className='wave' src={rocketWave} alt='' />
         </article>
+
+        <img src={mouseScroll} alt='' className='mouse-scroll' />
       </section>
-      <ProjectSection />
+      <ServiceSection />
       <PresentationSection />
-      <Portfolio />
+      <PortfolioSection />
       <ContactSection />
     </>
   )

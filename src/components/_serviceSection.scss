@@ -2,9 +2,9 @@
 
 $section-height: 46vmin;
 
-.project-section {
+.service-section {
   width: 100vw;
-  height: 100vh;
+  height: auto;
 
   background-color: $bg-color-primary;
 
@@ -25,7 +25,7 @@ $section-height: 46vmin;
 
     .card {
       width: 300px;
-      height: 260px;
+      height: 300px;
 
       position: relative;
       overflow: hidden;

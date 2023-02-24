@@ -5,11 +5,14 @@
   height: 100vh;
   background-color: $bg-color-primary;
 
-  background-image: url('../assets/images/header_background.webp');
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../assets/images/header_background.webp') fixed center no-repeat;
+  background-size: cover;
 
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .content-panel {
@@ -124,8 +127,41 @@
     right: 0;
   }
 
+  .smoke {
+    transform-origin: right;
+    animation: smoke 6s linear infinite;
+  }
+
   .wave {
     position: absolute;
     bottom: 0;
+  }
+}
+
+.mouse-scroll {
+  align-self: center;
+  margin-bottom: 8rem;
+  animation: bounce 2s ease infinite;
+}
+
+/* Animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px) scaleY(1.1);
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    transform: scaleX(0.95) scaleY(0.95);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
   }
 }

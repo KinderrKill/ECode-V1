@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import './_projectSection.scss'
+import './_serviceSection.scss'
 
-export default function ProjectSection() {
+export default function ServiceSection() {
   useEffect(() => {
     function handleOnMouseMove(event: MouseEvent, card: HTMLDivElement) {
       const rect = card.getBoundingClientRect()
@@ -18,7 +18,7 @@ export default function ProjectSection() {
     }
   }, [])
   return (
-    <section className='project-section flex flex-col justify-start items-center gap-10'>
+    <section className='service-section flex flex-col justify-start items-center gap-10 pb-20'>
       <div className='text-center'>
         <span className='text-secondary'>SERVICES</span>
         <h2 className='container mx-auto'>Mes services</h2>
@@ -27,7 +27,7 @@ export default function ProjectSection() {
           Lorem Ipsum standard dummy text.
         </p>
       </div>
-      <article className='project-section__display grid grid-cols-3 gap-5'>
+      <article className='service-section__display grid grid-cols-3 gap-5'>
         <div className='card-content'>
           <div className='card'></div>
         </div>

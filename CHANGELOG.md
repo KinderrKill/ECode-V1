@@ -1,3 +1,8 @@
+### Version 0.5
+
+- Finalisation du design sur les différentes sections
+- Ajout d'un retour en haut de page dynamique
+
 ### Version 0.4
 
 - Implémentation de la section : Contactez-moi

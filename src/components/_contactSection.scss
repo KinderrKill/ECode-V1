@@ -4,9 +4,12 @@
   width: 100vw;
   height: 100%;
 
-  background-color: $bg-color-third;
+  background: url('../assets/images/header_background.webp') fixed center no-repeat;
+  background-size: cover;
 
   padding-bottom: 5rem;
+
+  box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.75);
 
   &__title {
     position: relative;
@@ -29,8 +32,9 @@
       width: 100%;
       padding: 1rem 2rem;
       color: white;
-      background-color: $bg-color-secondary;
+      background-color: rgba(23, 26, 52, 0.9);
       border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     button {
