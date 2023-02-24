@@ -4,6 +4,9 @@ import useLogin from '../hooks/useLogin'
 import pocketBase from '../lib/pocketBase'
 import { AuthContextType } from '../utils/typings/globalTypes'
 
+type ContextComponents = {
+  children: React.ReactNode
+}
 export const AuthContextSchema = createContext<AuthContextType>({
   connected: false,
   token: null,
@@ -11,7 +14,7 @@ export const AuthContextSchema = createContext<AuthContextType>({
   logout: function () {},
 })
 
-export default function AuthContext(components: any) {
+export default function AuthContext(components: ContextComponents) {
   const [state, setState] = useState<AuthContextType>({
     connected: pocketBase.authStore.isValid,
     token: pocketBase.authStore.token,

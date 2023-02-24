@@ -1,20 +1,18 @@
+import SectionHeader from './sectionHeader'
 import BlobCursor from './shared/blobCursor'
 import './_presentationSection.scss'
 
 export default function PresentationSection() {
   return (
     <>
-      <div className='presentation-section'>
+      <div className='w-screen h-full overflow-hidden relative bg-third'>
         <BlobCursor />
-        <section className='presentation-section__title flex flex-col justify-start items-center gap-10 pt-10 '>
-          <h2>À propos de moi</h2>
-          <p className='text-center'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-            Lorem Ipsum standard dummy text.
-          </p>
-        </section>
-        <section className='presentation-section__display container mx-auto flex gap-10'>
-          <article className='w-1/3 flex justify-end'>
+        <SectionHeader id='aboutMe' title='À propos de moi'>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
+          Lorem Ipsum standard dummy text.
+        </SectionHeader>
+        <section className='presentation-section__display container mx-auto flex flex-col sm:flex-row justify-center items-center gap-10 pb-10'>
+          <article className='w-full sm:w-1/3 flex justify-center sm:justify-end'>
             <div className='presentation-section__card'>
               <div className='presentation-section__card--title'>
                 <span>
@@ -23,7 +21,7 @@ export default function PresentationSection() {
               </div>
             </div>
           </article>
-          <article className='w-1/2'>
+          <article className='w-full sm:w-1/2 px-5 sm:px-0'>
             <h4 className='font-bold mb-5'>Bonjour !</h4>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, veniam reprehenderit reiciendis sapiente
@@ -34,7 +32,7 @@ export default function PresentationSection() {
               dignissimos eveniet? Cumque consectetur minima placeat autem deleniti laudantium. Ipsa non quia labore
               mollitia harum sed accusamus.
             </p>
-            <div className='grid grid-cols-2 gap-5 mt-7'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 mt-7'>
               <div className='flex flex-col'>
                 <span className='text-secondary font-bold underline text-lg'>Email :</span>
                 <a href='mailto:ecode@gmail.com'>ecode@gmail.com</a>

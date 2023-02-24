@@ -68,10 +68,6 @@ h2 {
   font-size: clamp(2rem, 5vw, 4rem);
 }
 
-h3 {
-  font-size: clamp(1rem, 5vw, 3rem);
-}
-
 h4 {
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
@@ -84,6 +80,7 @@ button {
 .hover-underline {
   position: relative;
   width: auto;
+  padding-bottom: 0.5rem;
 
   &:before {
     content: '';
@@ -91,8 +88,8 @@ button {
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 10px;
-    background-color: white;
+    height: 3px;
+    background-color: $color-secondary;
     transition: width 0.2s ease-in-out;
   }
 

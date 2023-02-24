@@ -1,4 +1,5 @@
 import React from 'react'
+import SectionHeader from './sectionHeader'
 import './_contactSection.scss'
 
 export default function ContactSection() {
@@ -11,13 +12,10 @@ export default function ContactSection() {
   return (
     <>
       <div className='contact-section'>
-        <section className='contact-section__title flex flex-col justify-start items-center gap-10 pt-10'>
-          <h2>Travaillons ensemble</h2>
-          <p className='text-center'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-            Lorem Ipsum standard dummy text.
-          </p>
-        </section>
+        <SectionHeader id='contactMe' title='Travaillons ensemble'>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
+          Lorem Ipsum standard dummy text.
+        </SectionHeader>
 
         <section>
           <form

@@ -1,3 +1,8 @@
+### Version 0.6
+
+- Fix: Clé manquante sur l'affichage des mes items dans Portfolio.tsx et Footer.tsx
+- Ajout d'un composant générique pour le header des sections
+
 ### Version 0.5
 
 - Finalisation du design sur les différentes sections

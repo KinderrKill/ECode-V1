@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import SectionHeader from './sectionHeader'
 import './_serviceSection.scss'
 
 export default function ServiceSection() {
@@ -18,16 +19,12 @@ export default function ServiceSection() {
     }
   }, [])
   return (
-    <section className='service-section flex flex-col justify-start items-center gap-10 pb-20'>
-      <div className='text-center'>
-        <span className='text-secondary'>SERVICES</span>
-        <h2 className='container mx-auto'>Mes services</h2>
-        <p className='mt-5'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-          Lorem Ipsum standard dummy text.
-        </p>
-      </div>
-      <article className='service-section__display grid grid-cols-3 gap-5'>
+    <section className='w-screen h-auto bg-primary service-section flex flex-col justify-start items-center gap-10 pb-20'>
+      <SectionHeader id='services' title='Mes services'>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
+        Lorem Ipsum standard dummy text.
+      </SectionHeader>
+      <article className='service-section__display grid grid-cols-2 md:grid-cols-3 gap-5'>
         <div className='card-content'>
           <div className='card'></div>
         </div>

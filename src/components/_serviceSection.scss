@@ -3,29 +3,12 @@
 $section-height: 46vmin;
 
 .service-section {
-  width: 100vw;
-  height: auto;
-
-  background-color: $bg-color-primary;
-
-  user-select: none;
-
   &__display {
     position: relative;
-    padding-top: 4rem;
-    &::before {
-      content: '';
-      width: 20%;
-      height: 3px;
-      background-color: $color-secondary;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
 
     .card {
-      width: 300px;
-      height: 300px;
+      width: clamp(100px, 170px, 300px);
+      height: clamp(100px, 170px, 300px);
 
       position: relative;
       overflow: hidden;

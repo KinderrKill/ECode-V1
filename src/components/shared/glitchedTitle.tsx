@@ -1,14 +1,15 @@
 import { useEffect } from 'react'
 
-const LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+//const LETTERS = 'abcdefghijklmnopqrstuvwxyz'
 
 type propsType = {
+  id: string
   value: string
 }
 
 export default function GlitchedTitle(props: propsType) {
   useEffect(() => {
-    const text = document.querySelector<HTMLTitleElement>('h1')
+    const text = document.getElementById(props.id)
     if (!text) return
 
     text.onmouseover = (event) => {
@@ -22,7 +23,8 @@ export default function GlitchedTitle(props: propsType) {
           .split('')
           .map((letter, index) => {
             if (index < iterations) return props.value[index]
-            else return LETTERS[Math.floor(Math.random() * LETTERS.length)]
+            else return Math.random() < 0.5 ? '0' : '1'
+            //LETTERS[Math.floor(Math.random() * LETTERS.length)]
           })
           .join('')
 
@@ -33,8 +35,10 @@ export default function GlitchedTitle(props: propsType) {
     }
   }, [])
   return (
-    <h1 className='font-painted uppercase select-none text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline'>
+    <h2
+      id={props.id}
+      className='mb-9 text-3xl sm:text-5xl font-roboto font-semi-bold uppercase text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline select-none'>
       {props.value}
-    </h1>
+    </h2>
   )
 }

@@ -1,15 +1,6 @@
 @import '../app.scss';
 
 .presentation-section {
-  width: 100vw;
-  height: 100vh;
-
-  position: relative;
-  overflow: hidden;
-  background-color: $bg-color-third;
-
-  backdrop-filter: blur(8vmax);
-
   &:hover {
     .cursor-blob {
       opacity: 1;
@@ -106,7 +97,7 @@
 
   border-radius: 100%;
 
-  background: linear-gradient(to right, red, orange, cyan);
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.709), rgba(255, 166, 0, 0.806), rgba(0, 255, 255, 0.76));
   animation: blob-animation 10s linear infinite;
 
   transition: opacity 400ms ease;
@@ -121,7 +112,7 @@
 
     position: absolute;
 
-    backdrop-filter: blur(8vmax);
+    backdrop-filter: blur(10vmax);
 
     z-index: 0;
   }
