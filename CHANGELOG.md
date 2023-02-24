@@ -1,3 +1,8 @@
+### Version 0.4
+
+- Implémentation de la section : Contactez-moi
+- Implémentation du footer
+
 ### Version 0.3
 
 - Refonte globale du design

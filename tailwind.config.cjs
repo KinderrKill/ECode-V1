@@ -10,7 +10,9 @@ module.exports = {
         painted: ['Finger Paint', 'monospace', 'sans-serif'],
       },
       colors: {
+        primary: '#1b1e3d',
         secondary: '#cc3b45',
+        third: '#171a34',
       },
     },
   },

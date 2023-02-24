@@ -8,6 +8,7 @@ import { ConsoleCommand } from '../components/consoleCommand'
 import ProjectSection from '../components/projectSection'
 import PresentationSection from '../components/presentationSection'
 import Portfolio from '../components/portfolio'
+import ContactSection from '../components/contactSecion'
 
 export default function HomePage() {
   return (
@@ -25,6 +26,7 @@ export default function HomePage() {
       <ProjectSection />
       <PresentationSection />
       <Portfolio />
+      <ContactSection />
     </>
   )
 }
