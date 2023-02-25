@@ -1,5 +1,7 @@
 ### Version 0.6
 
+- Finalisation du formulaire et envoi du contenus à PocketBase
+- Fix: useFetch, traitement des erreurs et ajout d'une méthode de "fetchOnLoad"
 - Fix: Clé manquante sur l'affichage des mes items dans Portfolio.tsx et Footer.tsx
 - Ajout d'un composant générique pour le header des sections
 

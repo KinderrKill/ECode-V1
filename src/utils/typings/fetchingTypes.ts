@@ -1,5 +1,8 @@
-import { PocketBaseRecord } from './../../lib/pocketBase'
+import { PocketBaseRecord } from './../../lib/pocketBase';
 
-export interface TestRecord extends PocketBaseRecord {
-  value: string
+export interface ContactFormRecord extends PocketBaseRecord {
+  name: string;
+  email: string;
+  subject: string;
+  content: string;
 }

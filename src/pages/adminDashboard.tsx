@@ -1,25 +1,13 @@
-import { useNavigate } from 'react-router-dom'
-import useAuthContext from '../hooks/useAuthContext'
-import useFetch from '../hooks/useFetch'
-
-import { COLLECTIONS, FETCH_METHOD } from '../utils/constants'
-import { TestRecord } from '../utils/typings/fetchingTypes'
+import { useNavigate } from 'react-router-dom';
+import useAuthContext from '../hooks/useAuthContext';
 
 export function Dashboard() {
-  const navigate = useNavigate()
-  const authContext = useAuthContext()
-
-  const { data, state } = useFetch<TestRecord>({
-    collectionName: COLLECTIONS.TEST,
-    method: FETCH_METHOD.GET_FULL_LIST,
-  })
-
-  console.log('Dashboard useFetch : ', data?.value)
-  console.log(state)
+  const navigate = useNavigate();
+  const authContext = useAuthContext();
 
   function handleLogout() {
-    authContext.logout()
-    navigate('/login/admin')
+    authContext.logout();
+    navigate('/login/admin');
   }
 
   return (
@@ -40,5 +28,5 @@ export function Dashboard() {
         </div> */}
       </div>
     </>
-  )
+  );
 }

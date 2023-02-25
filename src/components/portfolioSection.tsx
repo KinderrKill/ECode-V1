@@ -5,6 +5,7 @@ import './_3dCard.scss'
 import imgTest1 from '../assets/bg_coc_test.png'
 import imgTest2 from '../assets/logo_coc_test.png'
 import imgTest3 from '../assets/model_coc_test.webp'
+
 import SectionHeader from './sectionHeader'
 
 interface Test {

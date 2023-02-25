@@ -39,7 +39,7 @@ export default function Layout({ components }: LayoutProps) {
 
       <span
         ref={buttonRef}
-        className='fixed hidden sm:block -bottom-20 right-3 z-10 w-16 hover:animate-pulse cursor-pointer hover:scale-110 transition-all'
+        className='fixed hidden sm:block -bottom-20 right-3 z-10 w-10 hover:animate-pulse cursor-pointer hover:scale-110 transition-all'
         onClick={(event) => scrollToTop(event)}>
         <img src={RocketIcon} className='-rotate-45' alt='Rocket icons created by Freepik - Flaticon' />
       </span>

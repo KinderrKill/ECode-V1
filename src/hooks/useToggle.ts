@@ -7,5 +7,5 @@ export default function useToggle(defaultValue: boolean) {
     setValue((prevValue) => (typeof state === 'boolean' ? state : !prevValue))
   }
 
-  return { value, toggle }
+  return [value, toggle] as const
 }

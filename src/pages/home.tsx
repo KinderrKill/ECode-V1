@@ -19,7 +19,7 @@ export default function HomePage() {
         <article
           className='content-panel w-full h-1/3 absolute top-1/2 left-0 -translate-y-1/2 px-5
         lg:w-2/5 lg:left-52 lg:h-2/5'>
-          <ConsoleCommand />
+          {/* <ConsoleCommand /> */}
         </article>
         <article className='rocket-panel'>
           <img className='smoke' src={rocketSmoke} alt='' />
@@ -29,9 +29,9 @@ export default function HomePage() {
 
         <img src={mouseScroll} alt='' className='mouse-scroll' />
       </section>
-      <ServiceSection />
+      {/* <ServiceSection />
       <PresentationSection />
-      <PortfolioSection />
+      <PortfolioSection /> */}
       <ContactSection />
     </>
   )
