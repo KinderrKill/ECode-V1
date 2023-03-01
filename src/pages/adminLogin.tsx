@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from 'react'
-import { AuthData } from '../utils/typings/globalTypes'
-import useLogin from '../hooks/useLogin'
-import { useNavigate } from 'react-router-dom'
-import useAuthContext from '../hooks/useAuthContext'
+import React, { useEffect, useState } from 'react';
+import { AuthData } from '../utils/typings/globalTypes';
+import useLogin from '../hooks/useLogin';
+import { useNavigate } from 'react-router-dom';
+import useAuthContext from '../hooks/useAuthContext';
 
 export function AdminLogin() {
-  const navigate = useNavigate()
-  const authContext = useAuthContext()
+  const navigate = useNavigate();
+  const authContext = useAuthContext();
 
   // Automatic redirection if user is already connected
   useEffect(() => {
-    if (authContext.connected) navigate('/dashboard')
-  }, [])
+    if (authContext.connected) navigate('/dashboard');
+  }, []);
 
-  const { login, loginState } = useLogin()
+  const { login, loginState } = useLogin();
 
   const [data, setData] = useState<AuthData>({
     email: null,
     password: null,
-  })
+  });
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>, key: string) {
     setData((prevData) => ({
       ...prevData,
       [key]: event.target.value,
-    }))
+    }));
   }
 
   async function handleConnection(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     // Prevents React from releasing event properties before async login() call.
-    event.persist()
+    event.persist();
 
-    await login(data, '/dashboard')
+    await login(data, '/dashboard');
   }
 
   return (
@@ -94,5 +94,5 @@ export function AdminLogin() {
         </div>
       </section>
     </>
-  )
+  );
 }

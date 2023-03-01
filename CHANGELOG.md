@@ -1,3 +1,8 @@
+### Version 0.7
+
+- Création d'un layout pour la partie administrateur
+- Création de la page des messages réçus
+
 ### Version 0.6
 
 - Finalisation du formulaire et envoi du contenus à PocketBase

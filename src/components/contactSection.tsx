@@ -3,7 +3,7 @@ import useFetch from '../hooks/useFetch';
 import { COLLECTIONS, FETCH_METHOD } from '../utils/constants';
 import { ContactFormRecord } from '../utils/typings/fetchingTypes';
 import { FormData } from '../utils/typings/globalTypes';
-import SectionHeader from './sectionHeader';
+import SectionHeader from './shared/sectionHeader';
 
 export default function ContactSection() {
   const submitButtonRef = useRef<HTMLButtonElement>(null);
@@ -33,12 +33,17 @@ export default function ContactSection() {
   }
 
   function isFormComplete(): boolean {
-    //const { name, email, subject, content } = formData;
-    return true; //!!name && !!email && !!subject && !!content;
+    const { name, email, subject, content } = formData;
+    return !!name && !!email && !!subject && !!content;
   }
 
   // useEffect for move button if form data is incomplete
   useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+
+    if (isMobile) return;
+
     const submitButton = submitButtonRef.current;
     if (!submitButton) return;
 
@@ -69,15 +74,16 @@ export default function ContactSection() {
     <>
       <div className='background-image'>
         <SectionHeader id='contactMe' title='Travaillons ensemble'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-          Lorem Ipsum standard dummy text.
+          Je suis disponible pour discuter de tout type de projet, de la création de sites web à la conception
+          d'applications mobiles. Je suis impatient de travailler avec vous et de vous aider à réaliser votre projet
+          avec succès
         </SectionHeader>
         {/* FORM */}
         <section className='pb-10'>
           <form
             onSubmit={handleSubmit}
-            className='container mx-auto px-36 w-full flex flex-col items-start justify-start gap-5 pb-6'>
-            <div className='w-full flex gap-5'>
+            className='container mx-auto px-5 xl:px-36 w-full flex flex-col items-start justify-start gap-5 pb-6'>
+            <div className='w-full flex flex-col sm:flex-row gap-5'>
               <input
                 type='text'
                 placeholder='Nom, pseudo ou organisme'

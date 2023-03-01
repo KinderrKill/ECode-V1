@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import './_portfolio.scss'
-import './_3dCard.scss'
+import { useState } from 'react';
+import './_portfolio.scss';
+import './_3dCard.scss';
 
-import imgTest1 from '../assets/bg_coc_test.png'
-import imgTest2 from '../assets/logo_coc_test.png'
-import imgTest3 from '../assets/model_coc_test.webp'
+import imgTest1 from '../assets/bg_coc_test.png';
+import imgTest2 from '../assets/logo_coc_test.png';
+import imgTest3 from '../assets/model_coc_test.webp';
 
-import SectionHeader from './sectionHeader'
+import SectionHeader from './shared/sectionHeader';
 
 interface Test {
-  label: string
-  category: portfolioCategory
-  link: string
+  label: string;
+  category: portfolioCategory;
+  link: string;
   images: {
-    background: string
-    logo: string
-    character: string
-  }
+    background: string;
+    logo: string;
+    character: string;
+  };
 }
 
 enum portfolioCategory {
@@ -25,7 +25,7 @@ enum portfolioCategory {
 }
 
 export default function PortfolioSection() {
-  const [category, setCategory] = useState<portfolioCategory | null>(null)
+  const [category, setCategory] = useState<portfolioCategory | null>(null);
 
   const projectItems = [
     {
@@ -98,10 +98,10 @@ export default function PortfolioSection() {
         character: imgTest3,
       },
     },
-  ]
+  ];
 
   function getListedItems() {
-    return category != null ? projectItems.filter((item) => item.category === category) : projectItems
+    return category != null ? projectItems.filter((item) => item.category === category) : projectItems;
   }
 
   return (
@@ -147,11 +147,11 @@ export default function PortfolioSection() {
                     </span>
                   </div>
                 </a>
-              )
+              );
             })}
           </article>
         </section>
       </div>
     </>
-  )
+  );
 }

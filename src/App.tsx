@@ -1,14 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import HomePage from './pages/home'
-import Layout from './pages/layout/Layout'
+import HomePage from './pages/home';
+import Layout from './pages/layout/Layout';
 
-import './_app.scss'
-import { Dashboard } from './pages/adminDashboard'
-import AuthContext from './contexts/authContext'
-import { AdminLogin } from './pages/adminLogin'
+import './_app.scss';
+import { Dashboard } from './pages/dashboard/adminDashboard';
+import AuthContext from './contexts/authContext';
+import { AdminLogin } from './pages/adminLogin';
+import DashboardLayout from './pages/layout/DashboardLayout';
+import Contact from './pages/dashboard/contact';
+import ContactPage from './pages/dashboard/[slug]';
 
 const router = createBrowserRouter([
   {
@@ -22,13 +25,21 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Layout components={<Dashboard />} />,
+    element: <DashboardLayout components={<Dashboard />} />,
   },
   {
-    path: '/login/admin',
+    path: '/dashboard/login',
     element: <Layout components={<AdminLogin />} />,
   },
-])
+  {
+    path: '/dashboard/contact',
+    element: <DashboardLayout components={<Contact />} />,
+  },
+  {
+    path: '/dashboard/contact/:id',
+    element: <DashboardLayout components={<ContactPage />} />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <AuthContext>
@@ -37,4 +48,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
   //   <RouterProvider router={router} />
   // </React.StrictMode>
-)
+);

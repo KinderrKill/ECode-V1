@@ -1,6 +1,10 @@
 @import '../app.scss';
 
 .presentation-section {
+  width: 100vw;
+  height: auto;
+  background-color: $bg-color-third;
+
   &:hover {
     .cursor-blob {
       opacity: 1;
@@ -9,7 +13,6 @@
 
   &__title {
     position: relative;
-    padding-bottom: 3rem;
     &::after {
       content: '';
       width: 20%;
@@ -24,7 +27,6 @@
 
   &__display {
     position: relative;
-    margin-top: 4rem;
   }
 
   &__card {
@@ -112,7 +114,7 @@
 
     position: absolute;
 
-    backdrop-filter: blur(10vmax);
+    backdrop-filter: blur(12vmax);
 
     z-index: 0;
   }

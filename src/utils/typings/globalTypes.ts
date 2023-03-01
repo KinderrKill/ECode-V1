@@ -1,5 +1,3 @@
-import pocketBase from '../../lib/pocketBase';
-
 export interface DefaultState {
   loading: boolean;
   error: string | undefined;

@@ -1,23 +1,23 @@
-import { useEffect } from 'react'
-import SectionHeader from './sectionHeader'
-import './_serviceSection.scss'
+import { useEffect } from 'react';
+import SectionHeader from './shared/sectionHeader';
+import './_serviceSection.scss';
 
 export default function ServiceSection() {
   useEffect(() => {
     function handleOnMouseMove(event: MouseEvent, card: HTMLDivElement) {
-      const rect = card.getBoundingClientRect()
-      const x = event.clientX - rect.left
-      const y = event.clientY - rect.top
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
 
-      card.style.setProperty('--mouse-x', `${x}px`)
-      card.style.setProperty('--mouse-y', `${y}px`)
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     }
 
     for (const card of document.querySelectorAll('.card')) {
-      const cardElement = card as HTMLDivElement
-      cardElement.onmousemove = (e) => handleOnMouseMove(e, cardElement)
+      const cardElement = card as HTMLDivElement;
+      cardElement.onmousemove = (e) => handleOnMouseMove(e, cardElement);
     }
-  }, [])
+  }, []);
   return (
     <section className='w-screen h-auto bg-primary service-section flex flex-col justify-start items-center gap-10 pb-20'>
       <SectionHeader id='services' title='Mes services'>
@@ -45,5 +45,5 @@ export default function ServiceSection() {
         </div>
       </article>
     </section>
-  )
+  );
 }

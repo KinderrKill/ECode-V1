@@ -1,8 +1,10 @@
 export const APP_VERSION = '0.6';
 
 export const FETCH_METHOD = {
+  GET_ONE: 'getOne',
   GET_FULL_LIST: 'getFullList',
   CREATE: 'create',
+  DELETE: 'delete',
 };
 
 export const COLLECTIONS = {

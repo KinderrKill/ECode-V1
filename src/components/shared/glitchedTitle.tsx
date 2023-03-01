@@ -37,7 +37,7 @@ export default function GlitchedTitle(props: propsType) {
   return (
     <h2
       id={props.id}
-      className='mb-9 text-2xl sm:text-4xl font-roboto font-semi-bold uppercase text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline select-none'>
+      className='mb-9 text-2xl sm:text-4xl font-designer font-semi-bold uppercase text-gray-300 hover:text-white hover:scale-105 transition-all hover-underline select-none'>
       {props.value}
     </h2>
   );

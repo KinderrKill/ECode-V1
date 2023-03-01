@@ -31,6 +31,7 @@ $color-secondary: #cc3b45;
   --font-Poppins: 'Poppins', monospace, sans-serif;
   --font-Alegreya: 'Finger Paint', monospace, sans-serif;
   --font-roboto: 'Roboto', monospace, sans-serif;
+  --font-designer: 'DESIGNER', 'monospace', sans-serif;
 
   font-family: var(--font-roboto);
 }
@@ -70,6 +71,10 @@ h2 {
 
 h4 {
   font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .background-image {
