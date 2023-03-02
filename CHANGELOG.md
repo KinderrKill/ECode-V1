@@ -1,7 +1,7 @@
 ### Version 0.7
 
 - Création d'un layout pour la partie administrateur
-- Création de la page des messages réçus
+- Création de la page des messages reçus
 
 ### Version 0.6
 

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
-import { COLLECTIONS, FETCH_METHOD } from '../../utils/constants';
-import { ContactFormRecord } from '../../utils/typings/fetchingTypes';
+import useFetch from '../../../hooks/useFetch';
+import { COLLECTIONS, FETCH_METHOD } from '../../../utils/constants';
+import { ContactFormRecord } from '../../../utils/typings/fetchingTypes';
 
 export default function ContactPage() {
   const navigate = useNavigate();
@@ -38,23 +38,17 @@ export default function ContactPage() {
   }, [deleteData, deleteLoading, deleteError]);
 
   return (
-    <div className='w-full h-full'>
-      <Link to='/dashboard/contact' className='m-2 bg-secondary p-3 rounded-md'>
-        Retour aux messages...
-      </Link>
-
-      <section className='flex flex-col w-full h-full gap-5 px-10 mt-20'>
+    <section>
+      <article className='flex flex-col gap-10 px-10'>
         {!data ? (
-          <>
-            <p className='text-xl'>
-              {loading ? 'Chargement du message...' : `Erreur lors du chargement du message : ${error}`}
-            </p>
-          </>
+          <p className='text-xl'>
+            {loading ? 'Chargement du message...' : `Erreur lors du chargement du message : ${error}`}
+          </p>
         ) : (
           <>
-            <p className='text-xl'>
+            <p className='text-xl my-5'>
               Message (id: {data.id}) <br></br>
-              le {new Date(data.created).toLocaleString().replace(' ', ' à ')}
+              Reçu le {new Date(data.created).toLocaleString().replace(' ', ' à ')}
             </p>
             <div className='w-full flex gap-5'>
               <label className='w-full'>
@@ -74,7 +68,7 @@ export default function ContactPage() {
             </label>
 
             <label>
-              Contenu :<textarea defaultValue={data.content}></textarea>
+              Contenu :<textarea defaultValue={data.content} cols={10} rows={15}></textarea>
             </label>
 
             <button className={'self-end ' + (deleteLoading ? 'animate-pulse' : '')} onClick={handleRemove}>
@@ -82,7 +76,7 @@ export default function ContactPage() {
             </button>
           </>
         )}
-      </section>
-    </div>
+      </article>
+    </section>
   );
 }

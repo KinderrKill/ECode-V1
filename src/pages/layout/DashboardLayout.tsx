@@ -1,14 +1,11 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import RocketIcon from '../../assets/rocket.webp';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction, useNavigate } from 'react-router-dom';
 import useAuthContext from '../../hooks/useAuthContext';
 
 import 'remixicon/fonts/remixicon.css';
-
-type LayoutProps = {
-  components: ReactNode;
-};
+import { AuthContextType, FunctionChildComponent } from '../../utils/typings/globalTypes';
+import pocketBase from '../../lib/pocketBase';
 
 type NavbarItem = {
   label: string;
@@ -16,45 +13,25 @@ type NavbarItem = {
   icon: string;
 };
 
-export default function DashboardLayout({ components }: LayoutProps) {
+export default function DashboardLayout({ components }: FunctionChildComponent) {
   const navigate = useNavigate();
   const authContext = useAuthContext();
 
+  redirectIfUserNotLoggedIn(navigate, authContext);
+
   const [selectedNavItem, setSelectedNavItem] = useState(0);
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [messageAmount, setMessageAmount] = useState(0);
 
-  function scrollToTop(event: React.MouseEvent) {
-    event.preventDefault();
-    window.scrollTo(0, 0);
-  }
+  useEffect(() => {
+    async function getMessages() {
+      const resultList = await pocketBase.collection('contact_form').getFullList();
 
-  function toggleScrollToTopButton() {
-    if (!buttonRef.current) return;
-
-    const button = buttonRef.current;
-    if (window.pageYOffset > document.documentElement.clientHeight) {
-      button.style.bottom = '1.5rem';
-    } else {
-      button.style.bottom = '-5rem';
+      setMessageAmount(resultList.length);
     }
-  }
 
-  useEffect(() => {
-    if (!buttonRef.current) return;
-    window.addEventListener('scroll', toggleScrollToTopButton);
-    return () => window.removeEventListener('scroll', toggleScrollToTopButton);
-  }, [buttonRef]);
-
-  // Disconnection
-  useEffect(() => {
-    if (!authContext.connected) navigate('./login');
+    getMessages();
   }, []);
-
-  function handleLogout() {
-    authContext.logout();
-    navigate('/');
-  }
 
   const leftNavItems: NavbarItem[] = [
     {
@@ -63,7 +40,7 @@ export default function DashboardLayout({ components }: LayoutProps) {
       icon: 'ri-home-6-line',
     },
     {
-      label: 'Messagerie',
+      label: `Messagerie (${messageAmount})`,
       link: '/dashboard/contact',
       icon: 'ri-mail-fill',
     },
@@ -71,24 +48,19 @@ export default function DashboardLayout({ components }: LayoutProps) {
 
   return (
     <>
-      {/* <div className='fixed top-0 left-0 bg-black p-2 z-10 flex flex-col'>
-        <span className='text-red-500 2xl:text-green-500'>DEBUG 2XL</span>
-        <span className='text-red-500 xl:text-green-500'>DEBUG XL</span>
-        <span className='text-red-500 lg:text-green-500'>DEBUG LG</span>
-        <span className='text-red-500 md:text-green-500'>DEBUG MD</span>
-        <span className='text-red-500 sm:text-green-500'>DEBUG SM</span>
-      </div> */}
-
       <section className='w-screen h-screen bg-[#15232e] flex'>
-        <nav className='w-72 h-full bg-[#1f2935] border-r border-gray-500 pt-14'>
-          <ul className='w-full flex flex-col'>
+        <nav className='w-52 h-full bg-[#1f2935] border-r border-gray-500 flex flex-col items-center justify-between'>
+          <ul className='w-52 flex flex-col px-2'>
+            <div className='h-20 text-center flex justify-center items-center font-primary font-bold text-2xl border-b border-gray-500'>
+              <span>E-Code</span>
+            </div>
             {leftNavItems.map((item, index) => (
               <Link
                 onClick={() => setSelectedNavItem(index)}
                 to={item.link}
                 key={index}
                 className={
-                  'w-full py-3 px-5 hover:bg-[#15232e] transition-colors ' +
+                  'w-full py-3 px-5 hover:bg-[#15232e] rounded my-1 transition-colors ' +
                   (selectedNavItem === index && 'bg-[#15232e]')
                 }>
                 <i className={item.icon}></i>
@@ -96,29 +68,24 @@ export default function DashboardLayout({ components }: LayoutProps) {
               </Link>
             ))}
           </ul>
+          <div className=' border-t border-gray-500 pt-5 w-full flex justify-center mb-5'>
+            <button onClick={() => disonnectUser(navigate, authContext)}>Se déconnecter</button>
+          </div>
         </nav>
 
-        <article className='w-screen h-full  overflow-hidden'>
-          <nav className=' h-14 bg-[#1f2935] border-b border-gray-500 flex justify-end items-center px-5'>
-            <ul>
-              <li>
-                <button onClick={handleLogout}>Se déconnecter</button>
-              </li>
-            </ul>
-          </nav>
-
-          <div className='w-full h-full'>
-            <div className='m-10 h-5/6 pt-5 bg-[#1f2935] rounded-md shadow-md shadow-black'>{components}</div>
-          </div>
-        </article>
+        <div className='w-full h-full mx-10 pt-5 bg-[#1f2935] rounded-md shadow-md shadow-black'>{components}</div>
       </section>
-
-      <span
-        ref={buttonRef}
-        className='fixed hidden sm:block -bottom-20 right-3 z-10 w-10 hover:animate-pulse cursor-pointer hover:scale-110 transition-all'
-        onClick={(event) => scrollToTop(event)}>
-        <img src={RocketIcon} className='-rotate-45' alt='Rocket icons created by Freepik - Flaticon' />
-      </span>
     </>
   );
+}
+
+function redirectIfUserNotLoggedIn(navigate: NavigateFunction, authContext: AuthContextType) {
+  useEffect(() => {
+    if (!authContext.connected) navigate('/dashoard/login');
+  }, [authContext.connected, navigate]);
+}
+
+function disonnectUser(navigate: NavigateFunction, authContext: AuthContextType) {
+  authContext.logout();
+  navigate('/');
 }

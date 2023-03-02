@@ -1,3 +1,9 @@
+import { ReactNode } from 'react';
+
+export type FunctionChildComponent = {
+  components: ReactNode;
+};
+
 export interface DefaultState {
   loading: boolean;
   error: string | undefined;

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
-import { COLLECTIONS, FETCH_METHOD } from '../../utils/constants';
-import { ContactFormRecord } from '../../utils/typings/fetchingTypes';
+import useFetch from '../../../hooks/useFetch';
+import { COLLECTIONS, FETCH_METHOD } from '../../../utils/constants';
+import { ContactFormRecord } from '../../../utils/typings/fetchingTypes';
 
 export default function Contact() {
   const { data, loading, error } = useFetch<ContactFormRecord[]>({
@@ -12,16 +12,12 @@ export default function Contact() {
   });
 
   return (
-    <div className='relative w-auto flex flex-col justify-center items-center m-5'>
+    <div className='flex flex-col justify-center items-center m-5'>
       <span className='text-center text-3xl underline mb-10'>
-        {loading
-          ? 'Chargement des messages...'
-          : error
-          ? 'Erreur lors du chargement des messages !'
-          : `Message (${data?.length})`}
+        {loading ? 'Chargement des messages...' : error ? 'Erreur lors du chargement des messages !' : `Mes messages`}
       </span>
-      <table className='w-full text-sm text-left text-gray-400'>
-        <thead className='text-xs  uppercase :bg-gray-700 dark:text-gray-400'>
+      <table className='w-full h-full text-sm text-left text-gray-400'>
+        <thead className='text-md uppercase bg-gray-700 text-gray-300 rounded-lg'>
           <tr>
             <th scope='col' className='w-1/2 px-6 py-3 text-ellipsis'>
               Message
@@ -32,7 +28,7 @@ export default function Contact() {
             <th scope='col' className='w-1/4 px-6 py-3'>
               Email
             </th>
-            <th scope='col' className='w-3/4 px-6 py-3 text-center'>
+            <th scope='col' className='w-3/4 px-6 py-3'>
               Consulter
             </th>
           </tr>
@@ -42,11 +38,11 @@ export default function Contact() {
             data.map((item, index) => (
               <tr key={index} className='border-b bg-gray-800 border-gray-700'>
                 <td className='w-1/2 px-6 py-4 font-medium text-white'>
-                  <p className='w-full text-ellipsis overflow-hidden'>{item.content}</p>
+                  <p className='h-5 w-full text-ellipsis overflow-hidden'>{item.content}</p>
                 </td>
                 <td className='w-1/4 px-6 py-4'>{item.subject}</td>
                 <td className='w-1/4 px-6 py-4'>{item.email}</td>
-                <td className='w-3/4 px-6 py-4 text-center'>
+                <td className='w-3/4 px-6 py-4'>
                   <Link to={'./' + item.id} className='cursor-pointer bg-purple-600 px-3 py-2 rounded-md'>
                     Consulter
                   </Link>
