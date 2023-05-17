@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Layout components={<HomePage />} />,
     errorElement: (
       <div>
-        <h1>PAGE 404</h1>
+        <h1>PAGE 404 - Not found</h1>
       </div>
     ),
   },
