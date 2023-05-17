@@ -1,3 +1,9 @@
+### Version 1.1
+
+- Temporary fix pocketbase type access for github action
+- Change console command text
+- Change footer link to redirect to correct place
+
 ### Version 0.8, 0.9 et 1.0
 
 - Finalisation des textes des sections

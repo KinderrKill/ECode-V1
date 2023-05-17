@@ -1,19 +1,19 @@
-import linkedinIcon from '../../assets/icons/linkedin.svg'
-import githubIcon from '../../assets/icons/github.svg'
-import youtubeIcon from '../../assets/icons/youtube.svg'
-import discordIcon from '../../assets/icons/discord.svg'
+import linkedinIcon from '../../assets/icons/linkedin.svg';
+import githubIcon from '../../assets/icons/github.svg';
+import youtubeIcon from '../../assets/icons/youtube.svg';
+import discordIcon from '../../assets/icons/discord.svg';
 
 interface SocialNetwork {
-  icon: string
-  link: string
-  alt: string
+  icon: string;
+  link: string;
+  alt: string;
 }
 
 export default function Footer() {
   const socialNetwork = [
     {
       icon: githubIcon,
-      link: 'https://www.youtube.com/@KinderrKill',
+      link: 'https://github.com/KinderrKill/',
       alt: 'Github Icon by Font Awesome',
     },
     {
@@ -29,10 +29,10 @@ export default function Footer() {
     },
     {
       icon: discordIcon,
-      link: 'https://www.youtube.com/@KinderrKill',
+      link: 'https://discord.gg/x2WwPnYk5c',
       alt: 'Discord Logo Icon by Icon Mafia on IconScout',
     },
-  ]
+  ];
 
   return (
     <div className='bg-third pb-3 flex flex-col items-center justify-center'>
@@ -48,5 +48,5 @@ export default function Footer() {
         <a href='https://gioco-design.fr/'>Gioco</a>
       </span>
     </div>
-  )
+  );
 }
