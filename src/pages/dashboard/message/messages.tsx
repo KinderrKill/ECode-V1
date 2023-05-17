@@ -34,7 +34,7 @@ export default function Contact() {
         </thead>
         <tbody>
           {data &&
-            data.map((item, index) => (
+            data.map((item: any, index: any) => (
               <tr key={index} className='border-b bg-gray-800 border-gray-700'>
                 <td className='w-1/2 px-6 py-4 font-medium text-white'>
                   <p className='h-5 w-full text-ellipsis overflow-hidden'>{item.content}</p>
