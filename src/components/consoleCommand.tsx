@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import TypingWriter from '../tools/typingWriter';
-import { APP_VERSION } from '../utils/constants';
+import TypingWriter from '@/tools/typingWriter';
+import { APP_VERSION } from '@/utils/constants';
 
 import './_consoleCommand.scss';
 
