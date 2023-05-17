@@ -1,50 +1,45 @@
-import pocketBase from '../lib/pocketBase'
-import { useEffect, useState } from 'react'
+import pocketBase from '../lib/pocketBase';
+import { useEffect, useState } from 'react';
 
-import { BaseDataOptions, CollectionDataResult, DefaultState } from '../utils/typings/globalTypes'
+import { BaseDataOptions, CollectionDataResult, PBResponseError } from '../utils/typings/globalTypes';
 
 export default function useFetch<T>({
   collectionName,
   method,
+  fetchOnLoad = false,
   params = [],
 }: BaseDataOptions<T>): CollectionDataResult<T> {
-  const [data, setData] = useState<T | null>(null)
-  const [state, setState] = useState<DefaultState>({
-    loading: true,
-    error: undefined,
-  })
+  const [data, setData] = useState<T | null>(null);
+
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<{ [key: string]: string }>();
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const collection: any = pocketBase.collection(collectionName)
+    if (fetchOnLoad) fetchData();
+  }, [collectionName]);
 
-        if (!(method in collection)) {
-          console.error(`Method ${method} is not available in ${collectionName} collection !`)
-          setState((prevState) => ({
-            ...prevState,
-            loading: false,
-          }))
-        }
+  async function fetchData() {
+    try {
+      setLoading(true);
+      const collection: any = pocketBase.collection(collectionName);
 
-        const result = await collection[method](...params)
-
-        setData(result)
-        setState((prevState) => ({
-          ...prevState,
-          loading: false,
-        }))
-      } catch (error) {
-        console.error(`Error fetching data in collection ${collectionName}, error ${error}`)
-        setState((prevState) => ({
-          ...prevState,
-          loading: false,
-        }))
+      if (!(method in collection)) {
+        console.error(`Method ${method} is not available in ${collectionName} collection !`);
+        setLoading(false);
       }
+
+      const result = await collection[method](...params);
+
+      setData(result);
+      setLoading(false);
+    } catch (error: any) {
+      const pbError = error as PBResponseError;
+      console.error(`Error fetching data in collection ${collectionName}, error ${pbError}`);
+      setError(pbError.data);
+      setLoading(false);
+      window.alert(`Une erreur est survenue lors de l'envoi de votre formulaire !\n\n${pbError}`);
     }
+  }
 
-    fetchData()
-  }, [collectionName])
-
-  return { data, state }
+  return { loading, error, data, fetchData };
 }

@@ -1,0 +1,124 @@
+@import '../app.scss';
+
+.portfolio-section {
+  width: 100vw;
+  height: 100%;
+
+  background-color: $bg-color-secondary;
+
+  padding-bottom: 5rem;
+
+  &__title {
+    position: relative;
+    padding-bottom: 3rem;
+    &::after {
+      content: '';
+      width: 20%;
+      height: 3px;
+      background-color: $color-secondary;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.portfolio-button {
+  color: white;
+  padding: 0.6rem 1.5rem;
+  background-color: transparent;
+  border-radius: 10%;
+
+  margin-bottom: 5rem;
+  &:hover {
+    background-color: $color-secondary;
+  }
+
+  &.selected {
+    background-color: $color-secondary;
+  }
+}
+
+.portfolio-card {
+  position: relative;
+
+  width: 300px;
+  height: 350px;
+
+  border-radius: 10px;
+
+  &__background {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    box-shadow: 0 0px 10px black;
+
+    transform-style: preserve-3d;
+    transition: all 400ms ease;
+
+    border-radius: inherit;
+
+    object-fit: cover;
+
+    .main-img {
+      width: 100%;
+      height: 100%;
+      transition: filter 300ms ease;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 300ms ease;
+      background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+    }
+
+    &:hover {
+      transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+      box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .main-img {
+        filter: brightness(0.7) grayscale(0.5);
+      }
+
+      .second-img {
+        transform: translateY(-100%) rotateX(-30deg) translateZ(15rem);
+        opacity: 1;
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+
+      border-radius: inherit;
+    }
+
+    .second-img {
+      opacity: 0;
+      transform: translateY(-50%);
+      transition: all 400ms ease;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    text-align: center;
+
+    position: absolute;
+    bottom: 0px;
+    transform: translateZ(10rem);
+  }
+}
