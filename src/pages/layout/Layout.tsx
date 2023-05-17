@@ -1,4 +1,4 @@
-import React, { JSXElementConstructor, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Footer from '../../components/shared/footer';
 
 import RocketIcon from '../../assets/rocket.webp';
@@ -19,7 +19,7 @@ export default function Layout({ components }: FunctionChildComponent) {
 
   return (
     <>
-      <ResponsiveDebugDisplay />
+      {/* <ResponsiveDebugDisplay /> */}
 
       {/* Display child components */}
       <>{components}</>

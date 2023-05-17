@@ -37,6 +37,7 @@ export default function useFetch<T>({
       console.error(`Error fetching data in collection ${collectionName}, error ${pbError}`);
       setError(pbError.data);
       setLoading(false);
+      window.alert(`Une erreur est survenue lors de l'envoi de votre formulaire !\n\n${pbError}`);
     }
   }
 

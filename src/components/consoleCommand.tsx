@@ -1,44 +1,44 @@
-import { useEffect, useRef } from 'react'
-import TypingWriter from '../tools/typingWriter'
-import { APP_VERSION } from '../utils/constants'
+import { useEffect, useRef } from 'react';
+import TypingWriter from '../tools/typingWriter';
+import { APP_VERSION } from '../utils/constants';
 
-import './_consoleCommand.scss'
+import './_consoleCommand.scss';
 
 export function ConsoleCommand() {
-  const consoleCommandRef = useRef<HTMLDivElement>(null)
+  const consoleCommandRef = useRef<HTMLDivElement>(null);
 
   // MouseEvent for rotate content panel
   useEffect(() => {
-    const panel = document.querySelector<HTMLDivElement>('.console-command')
-    if (!panel) return
+    const panel = document.querySelector<HTMLDivElement>('.console-command');
+    if (!panel) return;
 
     window.onmousemove = (e) => {
-      rotatePanel(e, panel)
-    }
+      rotatePanel(e, panel);
+    };
 
     function rotatePanel(event: MouseEvent, element: HTMLDivElement) {
-      const x = event.clientX
-      const y = event.clientY
+      const x = event.clientX;
+      const y = event.clientY;
 
-      const middleX = window.innerWidth / 3
-      const middleY = window.innerHeight / 2
+      const middleX = window.innerWidth / 3;
+      const middleY = window.innerHeight / 2;
 
-      const offsetX = ((x - middleX) / middleX) * 20
-      const offsetY = ((y - middleY) / middleY) * 20
+      const offsetX = ((x - middleX) / middleX) * 20;
+      const offsetY = ((y - middleY) / middleY) * 20;
 
-      element.style.setProperty('--rotateX', offsetX + 'deg')
-      element.style.setProperty('--rotateY', -1 * offsetY + 'deg')
+      element.style.setProperty('--rotateX', offsetX + 'deg');
+      element.style.setProperty('--rotateY', -1 * offsetY + 'deg');
     }
-  }, [])
+  }, []);
 
-  const typingWriterRef = useRef<HTMLParagraphElement>(null)
-  let writer: TypingWriter | null = null
+  const typingWriterRef = useRef<HTMLParagraphElement>(null);
+  let writer: TypingWriter | null = null;
 
   useEffect(() => {
     if (typingWriterRef.current) {
-      if (!writer) writer = new TypingWriter(document.getElementById('typing-writer') as HTMLParagraphElement)
+      if (!writer) writer = new TypingWriter(document.getElementById('typing-writer') as HTMLParagraphElement);
 
-      if (writer.isActive() || writer.isFinished()) return
+      if (writer.isActive() || writer.isFinished()) return;
 
       writer
         .type('/start welcome.txt ')
@@ -58,9 +58,9 @@ export function ConsoleCommand() {
         .pauseFor(500)
         .type('\n\n')
         .pauseFor(2000)
-        .start(true)
+        .start(true);
     }
-  }, [typingWriterRef])
+  }, [typingWriterRef]);
 
   return (
     <div className='console-command' ref={consoleCommandRef}>
@@ -72,10 +72,10 @@ export function ConsoleCommand() {
         </div>
       </div>
       <div className='content'>
-        <h3>E-Code - Version {APP_VERSION}</h3>
+        <span>E-Code - Version {APP_VERSION}</span>
         <p>&copy; {new Date().getFullYear()} Étienne S. Tout droits réservés</p>
         <div ref={typingWriterRef} id='typing-writer' className='text-gray-300 mt-5 whitespace-pre-wrap'></div>
       </div>
     </div>
-  )
+  );
 }

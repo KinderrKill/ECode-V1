@@ -1,3 +1,9 @@
+### Version 0.8, 0.9 et 1.0
+
+- Finalisation des textes des sections
+- Ajout de message lors de l'envoi ou l'echec du formulaire de contact
+- Peaufinage du CSS pour la mise en production de la première version
+
 ### Version 0.7
 
 - Création d'un layout pour la partie administrateur

@@ -2,13 +2,28 @@ import { useState } from 'react';
 import './_portfolio.scss';
 import './_3dCard.scss';
 
-import imgTest1 from '../assets/bg_coc_test.png';
-import imgTest2 from '../assets/logo_coc_test.png';
-import imgTest3 from '../assets/model_coc_test.webp';
+import cocBackground from '../assets/portfolio/coc_bg.png';
+import cocLogo from '../assets/portfolio/coc_logo.png';
+import cocCharacter from '../assets/portfolio/coc_character.webp';
+import kiddoBackground from '../assets/portfolio/kiddo_bg.png';
+import kiddoLogo from '../assets/portfolio/kiddo_logo.png';
+import kiddoCharacter from '../assets/portfolio/kiddo_character.png';
+import bmsBackground from '../assets/portfolio/bms_bg.png';
+import bmsLogo from '../assets/portfolio/bms_logo.png';
+import bmsCharacter from '../assets/portfolio/bms_character.png';
+
+import fakeDiscussionBackground from '../assets/portfolio/fake_chat_bg.png';
+import minecraftLauncherBackground from '../assets/portfolio/minecraft_launcher_bg.png';
+import minecraftLauncherLogo from '../assets/portfolio/minecraft_launcher_logo.png';
+
+import jsonGeneratorBackground from '../assets/portfolio/json_generator_bg.png';
+
+import baseLogo from '../assets/portfolio/base_logo.png';
+import baseCharacter from '../assets/portfolio/base_character.png';
 
 import SectionHeader from './shared/sectionHeader';
 
-interface Test {
+interface ProjectCard {
   label: string;
   category: portfolioCategory;
   link: string;
@@ -22,6 +37,7 @@ interface Test {
 enum portfolioCategory {
   WEB = 'Web',
   JAVA = 'Java',
+  BOTH = 'BOTH',
 }
 
 export default function PortfolioSection() {
@@ -29,33 +45,23 @@ export default function PortfolioSection() {
 
   const projectItems = [
     {
+      label: 'Company Of Cube',
+      category: portfolioCategory.BOTH,
+      link: 'https://companyofcube.fr/',
+      images: {
+        background: cocBackground,
+        logo: cocLogo,
+        character: cocCharacter,
+      },
+    },
+    {
       label: 'Projet Kiddo',
       category: portfolioCategory.WEB,
       link: 'https://kiddo-front-la-passerelle.netlify.app/',
       images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
-      },
-    },
-    {
-      label: 'Company Of Cube - Site',
-      category: portfolioCategory.WEB,
-      link: 'https://companyofcube.fr/',
-      images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
-      },
-    },
-    {
-      label: 'Fake Discussion',
-      category: portfolioCategory.WEB,
-      link: 'https://fake-discussion.netlify.app/',
-      images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
+        background: kiddoBackground,
+        logo: kiddoLogo,
+        character: kiddoCharacter,
       },
     },
     {
@@ -63,19 +69,9 @@ export default function PortfolioSection() {
       category: portfolioCategory.WEB,
       link: 'http://www.store-bms.fr/',
       images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
-      },
-    },
-    {
-      label: 'Company Of Cube - Jeu',
-      category: portfolioCategory.JAVA,
-      link: 'https://companyofcube.fr/',
-      images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
+        background: bmsBackground,
+        logo: bmsLogo,
+        character: bmsCharacter,
       },
     },
     {
@@ -83,9 +79,9 @@ export default function PortfolioSection() {
       category: portfolioCategory.JAVA,
       link: 'https://github.com/KinderrKill/Minecraft-Installer',
       images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
+        background: minecraftLauncherBackground,
+        logo: minecraftLauncherLogo,
+        character: baseCharacter,
       },
     },
     {
@@ -93,26 +89,42 @@ export default function PortfolioSection() {
       category: portfolioCategory.JAVA,
       link: 'https://github.com/KinderrKill/Minecraft-Json-Generator',
       images: {
-        background: imgTest1,
-        logo: imgTest2,
-        character: imgTest3,
+        background: jsonGeneratorBackground,
+        logo: baseLogo,
+        character: baseCharacter,
+      },
+    },
+    {
+      label: 'Fake Discussion',
+      category: portfolioCategory.WEB,
+      link: 'https://fake-discussion.netlify.app/',
+      images: {
+        background: fakeDiscussionBackground,
+        logo: baseLogo,
+        character: baseCharacter,
       },
     },
   ];
 
   function getListedItems() {
-    return category != null ? projectItems.filter((item) => item.category === category) : projectItems;
+    return category != null
+      ? projectItems.filter((item) => item.category === category || item.category === portfolioCategory.BOTH)
+      : projectItems;
   }
 
   return (
     <>
       <div className='portfolio-section'>
         <SectionHeader id='portfolio' title='Portfolio'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-          Lorem Ipsum standard dummy text.
+          Vous pouvez retrouver ci-dessous quelqu'une de mes principales créations.<br></br>
+          N'hésitez pas à consulter mon{' '}
+          <a className='font-bold' href='https://github.com/KinderrKill' target='_blank'>
+            Github
+          </a>{' '}
+          pour trouver d'autres projets.
         </SectionHeader>
 
-        <section className='flex flex-col items-center justify-center mt-16'>
+        <section className='flex flex-col items-center justify-center mt-10'>
           <article>
             <div className='flex gap-5'>
               <button
@@ -133,7 +145,7 @@ export default function PortfolioSection() {
             </div>
           </article>
           <article className='grid grid-cols-1 md:grid-cols-3'>
-            {getListedItems().map((item: Test, index: number) => {
+            {getListedItems().map((item: ProjectCard, index: number) => {
               return (
                 <a key={index} href={item.link} target='_blank' className='mb-16'>
                   <div className='card-3d'>

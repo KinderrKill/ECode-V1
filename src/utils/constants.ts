@@ -1,4 +1,4 @@
-export const APP_VERSION = '0.6';
+export const APP_VERSION = '1.0';
 
 export const FETCH_METHOD = {
   GET_ONE: 'getOne',

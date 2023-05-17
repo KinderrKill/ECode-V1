@@ -37,8 +37,8 @@ export default function PresentationSection() {
         <div className='cursor-blob__blur overflow-hidden z-0'></div>
 
         <SectionHeader id='aboutMe' title='À propos de moi'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br>
-          Lorem Ipsum standard dummy text.
+          Découvrez qui je suis et ce qui me passionne. <br></br>Cette section vous présente un aperçu de mon parcours
+          <br></br>et de mes aspirations dans le domaine du développement
         </SectionHeader>
 
         <section className='presentation-section__display container mx-auto flex flex-col sm:flex-row justify-center items-center gap-10 pb-10'>
@@ -54,13 +54,13 @@ export default function PresentationSection() {
           <article className='w-full sm:w-1/2 px-5 sm:px-0'>
             <h4 className='font-bold mb-5'>Bonjour !</h4>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, veniam reprehenderit reiciendis sapiente
-              voluptate debitis dolor sequi consequatur cupiditate maiores minima esse ex sint exercitationem aliquam
-              rem provident eum natus!<br></br>
+              Passionné par le développement java depuis plus de 10 ans, j'ai effectué une reconversion professionnelle
+              dans le développement Web afin d'associer passion et travail sans pour autant mélanger les langages.
               <br></br>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, porro! Laudantium officiis reiciendis
-              dignissimos eveniet? Cumque consectetur minima placeat autem deleniti laudantium. Ipsa non quia labore
-              mollitia harum sed accusamus.
+              <br></br>
+              J'ai effectué une formation de développeur full-stack JavaScript en 2022 qui m'a permis de décrocher la
+              certification de Concepteur développeur application et depuis je peux dire que je suis épanoui tant dans
+              la vie personnelle et professionnelle.
             </p>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 mt-7'>
               <div className='flex flex-col'>

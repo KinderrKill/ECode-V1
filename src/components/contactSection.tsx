@@ -25,6 +25,8 @@ export default function ContactSection() {
 
       const textArea = document.querySelector('textarea');
       if (textArea) textArea.value = '';
+
+      window.alert('Formulaire envoyé avec succès !');
     }
   }, [loading, error, data]);
 
@@ -67,7 +69,6 @@ export default function ContactSection() {
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     event.persist();
-
     fetchData();
   }
   return (
@@ -114,7 +115,7 @@ export default function ContactSection() {
                 type='submit'
                 className={
                   'w-32 absolute right-0 text-white transition-all ' +
-                  (isFormComplete() ? 'bg-green-700 hover:bg-third' : 'bg-red-900')
+                  (isFormComplete() ? 'bg-green-700 hover:bg-third' : 'bg-red-900 cursor-default')
                 }>
                 {isFormComplete() ? (loading ? 'En cours' : 'Envoyer') : 'Incomplet'}
               </button>
