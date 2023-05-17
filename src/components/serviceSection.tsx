@@ -81,7 +81,7 @@ export default function ServiceSection() {
         Je suis constamment à l'affût des nouvelles tendances et technologies pour offrir des solutions modernes et
         efficaces.
       </SectionHeader>
-      <article className='service-section__display grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-5 cursor-none'>
+      <article className='service-section__display grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-5'>
         {items.map((item, index) => (
           <div className='card-content select-none' key={index}>
             <div className='card flex flex-col p-5'>
