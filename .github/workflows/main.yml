@@ -1,34 +1,30 @@
-name: Build and Deploy
+name: 🚀 Deploy website on push
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  build-and-deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: 📂 Install dependencies
+      run: npm install
 
-      - name: Install dependencies
-        run: npm ci
+    - name: 📂 Build
+      run: npm run build
 
-      - name: Build
-        run: npm run build
-
-      - name: Upload to FTP
-        uses: wftp-upload-action@v2
+    - name: 📂 Upload to server
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
-          server-dir: /www
+          local-dir: ./dist/
+          server-dir: www
