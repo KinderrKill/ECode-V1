@@ -1,4 +1,4 @@
-# E-Code
+# E-Code V.1
 
 E-Code est un site vitrine personnel développé avec React et TypeScript. Il présente mes compétences en tant que concepteur développeur d'applications. Le backend est basé sur PocketBase.
 
@@ -32,3 +32,4 @@ Ce projet a été réalisé par [E-Code](https://github.com/KinderrKill).
 ## Remarques
 
 - J'ai porté une attention particulière à produire un code propre et optimisé autant que possible.
+- Il s'agit de la version 1 du site, réalisé en React. Une version 2 est déjà en cours de développement, plus complète et utilisant Next.
