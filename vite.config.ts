@@ -12,11 +12,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [
-        'react', // ignore react stuff
-        'react-dom',
-        'pocketBase',
-      ],
+      external: ['pocketBase'],
     },
   },
 });

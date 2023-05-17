@@ -27,4 +27,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./dist/
-          server-dir: www/
+          server-dir: /home/addvrmq/www/
