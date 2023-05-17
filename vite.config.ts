@@ -15,7 +15,7 @@ export default defineConfig({
       external: [
         'react', // ignore react stuff
         'react-dom',
-        'pocketbase',
+        'pocketBase',
       ],
     },
   },
