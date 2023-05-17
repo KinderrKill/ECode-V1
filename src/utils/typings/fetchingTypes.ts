@@ -1,5 +1,4 @@
-import internal from 'stream';
-import { PocketBaseRecord } from './../../lib/pocketBase';
+import { PocketBaseRecord } from '@/lib/pocketBase';
 
 export interface ContactFormRecord extends PocketBaseRecord {
   name: string;
