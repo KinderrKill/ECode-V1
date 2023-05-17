@@ -10,4 +10,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      external: [
+        'react', // ignore react stuff
+        'react-dom',
+        'pocketbase',
+      ],
+    },
+  },
+  optimizeDeps: {
+    include: ['pocketbase'],
+  },
 });
