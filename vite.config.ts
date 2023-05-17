@@ -19,7 +19,4 @@ export default defineConfig({
       ],
     },
   },
-  optimizeDeps: {
-    include: ['pocketbase'],
-  },
 });
