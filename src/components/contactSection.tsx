@@ -13,7 +13,7 @@ export default function ContactSection() {
     collectionName: COLLECTIONS.CONTACT_FORM,
     method: FETCH_METHOD.CREATE,
     params: [formData],
-  });
+  }) as any;
 
   useEffect(() => {
     if (error) console.log('Error : ', error?.data);
