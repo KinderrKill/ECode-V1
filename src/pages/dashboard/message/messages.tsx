@@ -8,7 +8,7 @@ export default function Contact() {
     collectionName: COLLECTIONS.CONTACT_FORM,
     method: FETCH_METHOD.GET_FULL_LIST,
     fetchOnLoad: true,
-  }) as any;
+  });
 
   return (
     <div className='flex flex-col justify-center items-center m-5'>

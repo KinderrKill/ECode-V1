@@ -14,7 +14,7 @@ export default function ContactPage() {
     method: FETCH_METHOD.GET_ONE,
     fetchOnLoad: true,
     params: [id],
-  }) as any;
+  });
 
   const {
     data: deleteData,
