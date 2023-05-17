@@ -26,7 +26,7 @@ export default function ContactPage() {
     method: FETCH_METHOD.DELETE,
     fetchOnLoad: false,
     params: [id],
-  });
+  }) as any;
 
   function handleRemove() {
     removeData();
