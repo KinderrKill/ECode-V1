@@ -1,3 +1,9 @@
+### Version 1.2
+
+- Fix CI build directory
+- Finalize mobile responsive design
+- Adapt the text on console command
+
 ### Version 1.1
 
 - Temporary fix pocketbase type access for github action
