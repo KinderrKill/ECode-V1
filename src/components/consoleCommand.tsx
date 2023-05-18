@@ -9,6 +9,11 @@ export function ConsoleCommand() {
 
   // MouseEvent for rotate content panel
   useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
+
+    if (isMobile) return;
+
     const panel = document.querySelector<HTMLDivElement>('.console-command');
     if (!panel) return;
 
