@@ -26,6 +26,8 @@
     transform-style: preserve-3d;
     transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
 
+    z-index: 5;
+
     .brand {
       width: 100%;
       height: 40px;
@@ -35,7 +37,7 @@
 
       position: relative;
 
-      z-index: 1;
+      z-index: 5;
 
       &__dot {
         position: absolute;
@@ -67,40 +69,42 @@
       }
     }
 
-    // &:before {
-    //   content: '';
-    //   width: 101%;
-    //   height: 101%;
+    &:before {
+      content: '';
+      width: 101%;
+      height: 101%;
 
-    //   border-radius: inherit;
+      border-radius: inherit;
 
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
 
-    //   background: conic-gradient(from 0deg at 50% 50%, blue, rgb(83, 0, 128), rgb(62, 0, 128), blue);
-    //   transform: translateZ(-50px);
-    // }
+      background: conic-gradient(from 0deg at 50% 50%, blue, rgb(83, 0, 128), rgb(62, 0, 128), blue);
+      transform: translateZ(-50px);
 
-    // &:after {
-    //   content: '';
-    //   width: 101%;
-    //   height: 101%;
+      z-index: 0;
+    }
 
-    //   border-radius: inherit;
+    &:after {
+      content: '';
+      width: 101%;
+      height: 101%;
 
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
+      border-radius: inherit;
 
-    //   inset: -0.1rem;
+      position: absolute;
+      top: 0;
+      left: 0;
 
-    //   background: rgb(5, 5, 5);
-    //   transform: translateZ(-10px);
-    //   filter: blur(10px);
+      inset: -0.1rem;
 
-    //   z-index: 0;
-    // }
+      background: rgb(5, 5, 5);
+      transform: translateZ(-10px);
+      filter: blur(10px);
+
+      z-index: 1;
+    }
 
     .content {
       margin: 1rem 1rem;
