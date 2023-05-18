@@ -35,6 +35,8 @@
 
       position: relative;
 
+      z-index: 1;
+
       &__dot {
         position: absolute;
         top: 5px;
@@ -80,23 +82,25 @@
       transform: translateZ(-50px);
     }
 
-    &:after {
-      content: '';
-      width: 101%;
-      height: 101%;
+    // &:after {
+    //   content: '';
+    //   width: 101%;
+    //   height: 101%;
 
-      border-radius: inherit;
+    //   border-radius: inherit;
 
-      position: absolute;
-      top: 0;
-      left: 0;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
 
-      inset: -0.1rem;
+    //   inset: -0.1rem;
 
-      background: rgb(5, 5, 5);
-      transform: translateZ(-10px);
-      filter: blur(10px);
-    }
+    //   background: rgb(5, 5, 5);
+    //   transform: translateZ(-10px);
+    //   filter: blur(10px);
+
+    //   z-index: 0;
+    // }
 
     .content {
       margin: 1rem 1rem;
