@@ -9,10 +9,7 @@ export function ConsoleCommand() {
 
   // MouseEvent for rotate content panel
   useEffect(() => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
-
-    if (isMobile) return;
+    if (userOnMobile()) return;
 
     const panel = document.querySelector<HTMLDivElement>('.console-command');
     if (!panel) return;
@@ -70,7 +67,7 @@ export function ConsoleCommand() {
   }, [typingWriterRef]);
 
   return (
-    <div className='console-command' ref={consoleCommandRef}>
+    <div className={userOnMobile() ? 'mobile-console-command' : 'console-command'} ref={consoleCommandRef}>
       <div className='brand'>
         <div className='brand__dot'>
           <span className='brand__dot dot-red'></span>
@@ -85,4 +82,9 @@ export function ConsoleCommand() {
       </div>
     </div>
   );
+}
+
+function userOnMobile(): boolean {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /iphone|ipod|ipad|android/.test(userAgent);
 }
