@@ -147,7 +147,7 @@ export default function PortfolioSection() {
           <article className='grid grid-cols-1 md:grid-cols-3'>
             {getListedItems().map((item: ProjectCard, index: number) => {
               return (
-                <a key={index} href={item.link} target='_blank' className='mb-16'>
+                <a key={index} href={item.link} target='_blank' className='mb-8'>
                   <div className='card-3d'>
                     <div className='wrapper'>
                       <img src={item.images.background} className='cover-image' />

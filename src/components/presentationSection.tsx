@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import SectionHeader from './shared/sectionHeader';
+import { userOnMobile } from '@/utils/constants';
 import './_presentationSection.scss';
 
 export default function PresentationSection() {
   useEffect(() => {
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isMobile = /iphone|ipod|ipad|android/.test(userAgent);
-
-    if (isMobile) return;
+    if (userOnMobile()) return;
 
     const blob = document.querySelector('.cursor-blob');
     if (!blob) return;

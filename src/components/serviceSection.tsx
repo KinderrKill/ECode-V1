@@ -7,6 +7,9 @@ import backEndIcon from '../assets/icons/nodejs.svg';
 import baasIcon from '../assets/icons/firebase.svg';
 import javaIcon from '../assets/icons/java.svg';
 import databaseIcon from '../assets/icons/database.svg';
+
+import { userOnMobile } from '@/utils/constants';
+
 import './_serviceSection.scss';
 
 interface CardItem {
@@ -60,6 +63,7 @@ export default function ServiceSection() {
 
   // Effect for flare effect
   useEffect(() => {
+    if (userOnMobile()) return;
     function handleOnMouseMove(event: MouseEvent, card: HTMLDivElement) {
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;

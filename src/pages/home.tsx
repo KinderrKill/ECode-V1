@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <section className='section'>
         <article
-          className='content-panel w-full h-1/3 absolute top-1/2 left-0 -translate-y-1/2 px-5
+          className='content-panel w-full h-1/2 md:h-1/3 absolute top-20 md:top-1/3 left-0 md:-translate-y-1/2 px-5
         lg:w-2/5 lg:left-52 lg:h-2/5'>
           <ConsoleCommand />
         </article>

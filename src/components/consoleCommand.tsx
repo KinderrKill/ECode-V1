@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import TypingWriter from '@/tools/typingWriter';
-import { APP_VERSION } from '@/utils/constants';
+import { APP_VERSION, userOnMobile } from '@/utils/constants';
 
 import './_consoleCommand.scss';
 
@@ -82,9 +82,4 @@ export function ConsoleCommand() {
       </div>
     </div>
   );
-}
-
-function userOnMobile(): boolean {
-  const userAgent = navigator.userAgent.toLowerCase();
-  return /iphone|ipod|ipad|android/.test(userAgent);
 }

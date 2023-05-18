@@ -1,4 +1,4 @@
-export const APP_VERSION = '1.2';
+export const APP_VERSION = '1.3';
 
 export const FETCH_METHOD = {
   GET_ONE: 'getOne',
@@ -13,3 +13,8 @@ export const COLLECTIONS = {
   CONTACT_FORM: 'contact_form',
   TEST: 'test',
 };
+
+export function userOnMobile(): boolean {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /iphone|ipod|ipad|android/.test(userAgent);
+}

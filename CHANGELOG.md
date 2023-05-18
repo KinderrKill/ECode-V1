@@ -1,3 +1,8 @@
+### Version 1.3
+
+- Optimize mobile user design
+- Fix console command display on mobile
+
 ### Version 1.2
 
 - Fix CI build directory
