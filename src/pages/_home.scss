@@ -67,20 +67,20 @@
       }
     }
 
-    &:before {
-      content: '';
-      width: 101%;
-      height: 101%;
+    // &:before {
+    //   content: '';
+    //   width: 101%;
+    //   height: 101%;
 
-      border-radius: inherit;
+    //   border-radius: inherit;
 
-      position: absolute;
-      top: 0;
-      left: 0;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
 
-      background: conic-gradient(from 0deg at 50% 50%, blue, rgb(83, 0, 128), rgb(62, 0, 128), blue);
-      transform: translateZ(-50px);
-    }
+    //   background: conic-gradient(from 0deg at 50% 50%, blue, rgb(83, 0, 128), rgb(62, 0, 128), blue);
+    //   transform: translateZ(-50px);
+    // }
 
     // &:after {
     //   content: '';

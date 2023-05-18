@@ -30,6 +30,10 @@
   }
 }
 
+#typing-writer {
+  z-index: 100;
+}
+
 #typing-writer p::after {
   content: '';
   width: 10px;
