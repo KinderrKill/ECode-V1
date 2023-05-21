@@ -2,24 +2,24 @@ import { useState } from 'react';
 import './_portfolio.scss';
 import './_3dCard.scss';
 
-import cocBackground from '../assets/portfolio/coc_bg.png';
-import cocLogo from '../assets/portfolio/coc_logo.png';
+import cocBackground from '../assets/portfolio/coc_bg.webp';
+import cocLogo from '../assets/portfolio/coc_logo.webp';
 import cocCharacter from '../assets/portfolio/coc_character.webp';
-import kiddoBackground from '../assets/portfolio/kiddo_bg.png';
-import kiddoLogo from '../assets/portfolio/kiddo_logo.png';
-import kiddoCharacter from '../assets/portfolio/kiddo_character.png';
-import bmsBackground from '../assets/portfolio/bms_bg.png';
-import bmsLogo from '../assets/portfolio/bms_logo.png';
-import bmsCharacter from '../assets/portfolio/bms_character.png';
+import kiddoBackground from '../assets/portfolio/kiddo_bg.webp';
+import kiddoLogo from '../assets/portfolio/kiddo_logo.webp';
+import kiddoCharacter from '../assets/portfolio/kiddo_character.webp';
+import bmsBackground from '../assets/portfolio/bms_bg.webp';
+import bmsLogo from '../assets/portfolio/bms_logo.webp';
+import bmsCharacter from '../assets/portfolio/bms_character.webp';
 
-import fakeDiscussionBackground from '../assets/portfolio/fake_chat_bg.png';
-import minecraftLauncherBackground from '../assets/portfolio/minecraft_launcher_bg.png';
-import minecraftLauncherLogo from '../assets/portfolio/minecraft_launcher_logo.png';
+import fakeDiscussionBackground from '../assets/portfolio/fake_chat_bg.webp';
+import minecraftLauncherBackground from '../assets/portfolio/minecraft_launcher_bg.webp';
+import minecraftLauncherLogo from '../assets/portfolio/minecraft_launcher_logo.webp';
 
-import jsonGeneratorBackground from '../assets/portfolio/json_generator_bg.png';
+import jsonGeneratorBackground from '../assets/portfolio/json_generator_bg.webp';
 
-import baseLogo from '../assets/portfolio/base_logo.png';
-import baseCharacter from '../assets/portfolio/base_character.png';
+import baseLogo from '../assets/portfolio/base_logo.webp';
+import baseCharacter from '../assets/portfolio/base_character.webp';
 
 import SectionHeader from './shared/sectionHeader';
 
