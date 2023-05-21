@@ -68,8 +68,10 @@ export default function ContactSection() {
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    event.persist();
-    fetchData();
+    if (isFormComplete()) {
+      event.persist();
+      fetchData();
+    }
   }
   return (
     <>
