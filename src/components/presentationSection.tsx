@@ -63,7 +63,7 @@ export default function PresentationSection() {
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 mt-7'>
               <div className='flex flex-col'>
                 <span className='text-ecRed font-bold underline text-lg'>Email :</span>
-                <a href='mailto:ecode@gmail.com'>ecode@gmail.com</a>
+                <a href='mailto:ecode@gmail.com'>sauvage-etienne@hotmail.com</a>
               </div>
               <div className='flex flex-col'>
                 <span className='text-ecRed font-bold underline text-lg'>LinkedIn :</span>
