@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useRef } from 'react';
 import Footer from '../../components/shared/footer';
 
 import RocketIcon from '../../assets/rocket.webp';
-import { FunctionChildComponent } from '../../utils/typings/globalTypes';
+
+type FunctionChildComponent = {
+  components: ReactNode;
+};
 
 export default function Layout({ components }: FunctionChildComponent) {
   const scrollToTopButtonRef = useRef<HTMLButtonElement>(null);
