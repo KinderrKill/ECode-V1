@@ -19,7 +19,7 @@ $color-secondary: #cc3b45;
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #282b5a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -78,7 +78,7 @@ p {
 }
 
 .background-image {
-  background: url('./assets/images/header_background.webp') fixed center center no-repeat;
+  background: url('./assets/images/header_background.webp') fixed center bottom no-repeat;
 }
 
 button {
