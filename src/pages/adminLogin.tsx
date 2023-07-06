@@ -10,7 +10,8 @@ export function AdminLogin() {
 
   // Automatic redirection if user is already connected
   useEffect(() => {
-    if (authContext.connected) navigate('/dashboard');
+    //console.log('USEEFFECT OF ADMIN LOGIN');
+    //if (authContext.connected) navigate('/dashboard');
   }, []);
 
   const { login, loginState } = useLogin();

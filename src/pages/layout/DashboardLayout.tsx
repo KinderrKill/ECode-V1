@@ -17,13 +17,13 @@ export default function DashboardLayout({ components }: FunctionChildComponent) 
   const navigate = useNavigate();
   const authContext = useAuthContext();
 
-  redirectIfUserNotLoggedIn(navigate, authContext);
-
   const [selectedNavItem, setSelectedNavItem] = useState(0);
 
   const [messageAmount, setMessageAmount] = useState(0);
 
   useEffect(() => {
+    //redirectIfUserNotLoggedIn(navigate, authContext);
+
     async function getMessages() {
       const resultList = await pocketBase.collection('contact_form').getFullList();
 

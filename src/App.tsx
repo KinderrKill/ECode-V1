@@ -15,6 +15,22 @@ import Contact from './pages/dashboard/message/messages';
 
 const router = createBrowserRouter([
   {
+    path: '/dashboard/login',
+    element: <Layout components={<AdminLogin />} />,
+  },
+  {
+    path: '/dashboard/contact',
+    element: <Layout components={<Contact />} />,
+  },
+  {
+    path: '/dashboard/contact/:id',
+    element: <Layout components={<ContactPage />} />,
+  },
+  {
+    path: '/dashboard',
+    element: <Layout components={<Dashboard />} />,
+  },
+  {
     path: '/',
     element: <Layout components={<HomePage />} />,
     errorElement: (
@@ -24,20 +40,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/dashboard',
-    element: <DashboardLayout components={<Dashboard />} />,
-  },
-  {
-    path: '/dashboard/login',
-    element: <Layout components={<AdminLogin />} />,
-  },
-  {
-    path: '/dashboard/contact',
-    element: <DashboardLayout components={<Contact />} />,
-  },
-  {
-    path: '/dashboard/contact/:id',
-    element: <DashboardLayout components={<ContactPage />} />,
+    path: '/test',
+    element: (
+      <div>
+        <h1>TEST PAGE</h1>
+      </div>
+    ),
   },
 ]);
 
@@ -45,7 +53,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <AuthContext>
     <RouterProvider router={router} />
   </AuthContext>
-  // <React.StrictMode>
-  //   <RouterProvider router={router} />
-  // </React.StrictMode>
 );
